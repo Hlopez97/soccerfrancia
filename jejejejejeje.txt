@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-=======
-jejeejwe
-asdadsadadas
->>>>>>> 86a712050503a66be360cf3115290386b639aa25
+el gui es un mmg
