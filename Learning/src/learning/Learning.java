@@ -27,7 +27,7 @@ public class Learning extends Application {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Gracias!");
+                System.out.println("Gracias por tocarme!");
             }
         });
         
