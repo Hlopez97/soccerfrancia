@@ -22,7 +22,7 @@ public class Learning extends Application {
     @Override
     public void start(Stage primaryStage) {
         Button btn = new Button();
-        btn.setText("Clickeame");
+        btn.setText("Tocame pls");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
