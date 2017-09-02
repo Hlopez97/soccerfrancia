@@ -22,12 +22,12 @@ public class Learning extends Application {
     @Override
     public void start(Stage primaryStage) {
         Button btn = new Button();
-        btn.setText("Ya puedoo");
+        btn.setText("Clickeame");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                System.out.println("Gracias!");
             }
         });
         
