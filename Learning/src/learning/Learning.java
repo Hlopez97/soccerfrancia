@@ -36,7 +36,7 @@ public class Learning extends Application {
         
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Hola, soy una ventana y me llamo Natacha");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
