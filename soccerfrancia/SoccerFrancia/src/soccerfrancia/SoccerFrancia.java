@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
+import java.util.concurrent.ThreadLocalRandom;
 /**
  *
  * @author Hector
@@ -74,6 +74,66 @@ class juego {
     public void temp() {
         System.out.println(kk);
     }
+    public void action(equipo pel, equipo nopel)  {
+        
+        player juga = pel.hasball();
+        String posicion = juga.posicion;
+        boolean HasBall = juga.HasBall;
+        int act = 0;       
+        if (posicion.equals("delantero"))  { act = 1; }
+        if (posicion.equals("centro"))  { act = 2; }
+        if (posicion.equals("defensa"))  { act = 3; }
+        if (posicion.equals("portero"))  { act = 4; }
+        // si tiene la pelota
+        if (HasBall) {     
+            switch(act) {
+                case 1:
+                    // probabilidad de que tire
+                    if (probabilidad(8))
+                    {
+                        //tiro
+                        // probabilidad de gol (incompleto)
+                        if (probabilidad(7))
+                        {
+                            
+                        }
+                        
+                        
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }                  
+        }     
+        // sino tiene la pelota
+        else {        
+            switch(act) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }   
+        }
+        
+        
+    }
+    public boolean probabilidad(int porcentaje) {
+    int randomNum = ThreadLocalRandom.current().nextInt(0,10); // es de 0 a 9 incluyendo 9
+        // 0 1 2 3 4 5 6 7 8 9 || hay 10 numeros
+    if (randomNum < porcentaje)
+    {
+        return true;
+    }
+    else {return false;}
+    } // completo
 }
 
 
@@ -93,27 +153,29 @@ class player {
     int id;
     String nombre;
     String posicion;
-    int skill1; int skill2; int skill3; int skill4; int skill5;
-    boolean HasBall;
+    int skilloff; int skilldri; int skilldef; int skilldes; int skillpor;
+    boolean HasBall = false; // false hasta que empieza el juego
     int FaltasLeve; int TarjetaAmarilla;
     boolean FaltaGrave;  // si tiene falta grave es lo mismo que tarjeta roja y es out, no hay mas de una por lo que puede ser bool
     boolean EstaHerido;
     
-    public player (int pid, String pnombre, String pposicion, int pskill1, int pskill2, int pskill3, int pskill4, int pskill5 ) {
+    public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskilldes, int pskillpor) {
         // aqui se setean los valores iniciales, es el constructor
         id=pid;
         posicion = pposicion;
-        skill1 = pskill1;
-        skill2= pskill2;
-        skill3 = pskill3;
-        skill4 = pskill4;
-        skill5 = pskill5;
+        skilloff = pskilloff;
+        skilldri= pskilldri;
+        skilldef = pskilldef;
+        skilldes = pskilldes;
+        skillpor = pskillpor;
+        
             
     }
     
     public void temp() {
         System.out.println(id);
     }
+    
     
     
 }
@@ -140,9 +202,13 @@ class equipo {
         // asi se crean jugadores nuevos dentro del equipo 
         jugadores.add(new player(1,"ronaldoElDios","delantero",100,50,0,100,0));
         jugadores.add(new player(2,"lucas","noC",50,30,20,-5,0));
+        jugadores.add(new player(2,"mauro","noC",0,0,0,0,0));
         
     }
-    
+    public player hasball() {
+        return null;
+    } 
+    // me va a retorna que jugador del equipo (o la lista de arriba) tiene la pelota
 }
 
 
