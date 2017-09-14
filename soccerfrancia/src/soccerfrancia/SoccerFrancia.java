@@ -71,8 +71,8 @@ class juego {
         
         
     }
-    public void temp() {
-        System.out.println(kk);
+    public void recorrido(equipo ball, equipo noball) {
+        
     }
     public void action(equipo ball, equipo noball)  {
         String posicion = "";
