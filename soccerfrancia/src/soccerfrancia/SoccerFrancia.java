@@ -19,6 +19,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 /**
  *
  * @author Hector Lopez
@@ -214,6 +215,51 @@ class equipo {
     public void start() {
      setplayers();  
     }
+    public void SetActivePlayers() {
+        
+        List<player> RandomList = Jugadores;
+        Collections.shuffle(RandomList);
+        int temp = Jugadores.size(); // Cantidad de jugadores de un equipo
+        int tamano = JugadoresActivos.size(); // Cantidad de jugadores en una partida
+        int i = 0;
+        player rol;
+        int cantPortero = 1;
+        int cantDefensa = 4;
+        int cantCentro = 3; 
+        int cantDelantero = 3;
+        while (i < 20) {
+            
+            rol = Jugadores.get(i); 
+            if ((rol.posicion.equals("portero")) && (cantPortero != 0)) {
+                
+                JugadoresActivos.add(rol);
+                cantPortero--;
+            }
+            if ((rol.posicion.equals("defensa")) && (cantDefensa != 0)){
+            
+                JugadoresActivos.add(rol);
+                cantDefensa--;
+            }
+            if ((rol.posicion.equals("centro")) && (cantCentro != 0)){
+            
+                JugadoresActivos.add(rol);
+                cantCentro--;
+            }
+            if ((rol.posicion.equals("delantero")) && (cantDelantero != 0)){
+            
+                JugadoresActivos.add(rol);
+                cantDelantero--;
+            }
+            if (tamano == 11){
+            
+                return;
+            }
+            i++;
+        }
+        
+         
+        
+    } // Metodo que forma los grupos de jugadores que van a participar a partir de su equipo
     
     public void setplayers() {
         // asi se crean jugadores nuevos dentro del equipo 
