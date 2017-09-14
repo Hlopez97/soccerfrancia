@@ -16,10 +16,10 @@ import javafx.stage.Stage;
 import java.util.concurrent.ThreadLocalRandom;
 /**
  *
- * @author Hector Lopez
- * @author Mauro Sosa
- * @author Lucas Pradel
- * @author William Diaz
+ * @author Hector
+ * @author Mauro
+ * @author Lucas
+ * @author William 
  */
 
 
@@ -61,23 +61,36 @@ public class SoccerFrancia extends Application {
 }
 
 
-// Clase juego
+// clase juego
 class juego {
     int kk;
     
     public juego(int id) {
-        kk=id;   
+        kk=id;
+        
+        
+        
     }
     public void temp() {
         System.out.println(kk);
     }
-    
     public void action(equipo pel, equipo nopel)  {
+         String posicion = "";
+        player PlayerConPelota = pel.hasball();
+        if (PlayerConPelota == null)
+        {
+            player PlayerAccion = nopel.hasball();
+            posicion = PlayerAccion.posicion;
+        }
+        else 
+        {
+            posicion = PlayerConPelota.posicion;
+        }
         
-        player juga = pel.hasball();
-        String posicion = juga.posicion;
-        boolean HasBall = juga.HasBall;
-        int act = 0;       
+        boolean HasBall = PlayerConPelota.HasBall;
+        int act = 0;
+        
+        
         if (posicion.equals("delantero"))  { act = 1; }
         if (posicion.equals("centro"))  { act = 2; }
         if (posicion.equals("defensa"))  { act = 3; }
@@ -156,6 +169,7 @@ class player {
     int FaltasLeve; int TarjetaAmarilla;
     boolean FaltaGrave;  // si tiene falta grave es lo mismo que tarjeta roja y es out, no hay mas de una por lo que puede ser bool
     boolean EstaHerido;
+    boolean PlayerAccion = false;
     
     public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskilldes, int pskillpor) {
         // aqui se setean los valores iniciales, es el constructor
