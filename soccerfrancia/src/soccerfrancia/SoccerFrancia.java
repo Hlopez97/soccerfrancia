@@ -90,7 +90,7 @@ class juego {
         boolean HasBall = PlayerConPelota.HasBall;
         int act = 0;
         
-        
+        //sss
         if (posicion.equals("delantero"))  { act = 1; }
         if (posicion.equals("centro"))  { act = 2; }
         if (posicion.equals("defensa"))  { act = 3; }
@@ -139,11 +139,7 @@ class juego {
     public boolean probabilidad(int porcentaje) {
     int randomNum = ThreadLocalRandom.current().nextInt(0,10); // es de 0 a 9 incluyendo 9
         // 0 1 2 3 4 5 6 7 8 9 || hay 10 numeros
-    if (randomNum < porcentaje)
-    {
-        return true;
-    }
-    else {return false;}
+        return randomNum < porcentaje;
     } // completo
 }
 
