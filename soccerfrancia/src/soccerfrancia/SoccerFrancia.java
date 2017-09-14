@@ -66,12 +66,9 @@ class juego {
     int kk;
     
     public juego(int id) {
-        kk=id;
-        
-        
-        
-        
+        kk=id;   
     }
+    
     public void recorrido(equipo ball, equipo noball) {
         if (ball.HasBall() != null) {
             action(ball,noball);
@@ -79,7 +76,7 @@ class juego {
         else { 
             action(noball,ball);
         }
-    }
+    } // me dice que hacer
     public void action(equipo ball, equipo noball)  {
         String posicion = "";
         player PlayerConPelota = ball.HasBall();
@@ -141,12 +138,12 @@ class juego {
         }
         
         
-    }
+    } // una accion (pase, tiro etc)
     public boolean probabilidad(int porcentaje) {
     int randomNum = ThreadLocalRandom.current().nextInt(0,10); // es de 0 a 9 incluyendo 9
         // 0 1 2 3 4 5 6 7 8 9 || hay 10 numeros
         return randomNum < porcentaje;
-    } // completo
+    } // probabilidad de que algo suceda
 }
 
 
