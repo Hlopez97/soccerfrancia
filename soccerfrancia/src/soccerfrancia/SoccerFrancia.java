@@ -70,16 +70,22 @@ class juego {
         
         
         
+        
     }
     public void recorrido(equipo ball, equipo noball) {
-        
+        if (ball.HasBall() != null) {
+            action(ball,noball);
+        }
+        else { 
+            action(noball,ball);
+        }
     }
     public void action(equipo ball, equipo noball)  {
         String posicion = "";
-        player PlayerConPelota = ball.hasball();
+        player PlayerConPelota = ball.HasBall();
         if (PlayerConPelota == null)
         {
-            player PlayerAccion = noball.hasball();
+            player PlayerAccion = noball.HasBall();
             posicion = PlayerAccion.posicion;
         }
         else 
@@ -207,7 +213,7 @@ class equipo {
         jugadores.add(new player(2,"mauro","noC",0,0,0,0,0));
         
     }
-    public player hasball() {
+    public player HasBall() {
         return null;
     } 
     
@@ -231,6 +237,6 @@ class informacion {
     
     public void temp() {
         System.out.println(kk);
-        
+     
     }
 }
