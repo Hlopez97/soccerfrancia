@@ -16,10 +16,10 @@ import javafx.stage.Stage;
 import java.util.concurrent.ThreadLocalRandom;
 /**
  *
- * @author Hector
- * @author Mauro
- * @author Lucas
- * @author William 
+ * @author Hector Lopez
+ * @author Mauro Sosa
+ * @author Lucas Pradel
+ * @author William Diaz
  */
 
 
@@ -74,12 +74,12 @@ class juego {
     public void temp() {
         System.out.println(kk);
     }
-    public void action(equipo pel, equipo nopel)  {
-         String posicion = "";
-        player PlayerConPelota = pel.hasball();
+    public void action(equipo ball, equipo noball)  {
+        String posicion = "";
+        player PlayerConPelota = ball.hasball();
         if (PlayerConPelota == null)
         {
-            player PlayerAccion = nopel.hasball();
+            player PlayerAccion = noball.hasball();
             posicion = PlayerAccion.posicion;
         }
         else 
@@ -152,13 +152,6 @@ class juego {
 class player {
     // declaracion de variables iniciales
     
-    /*
-    * Skill 1 = skill offensivo
-    * Skill 2 = skill dribleo 
-    * Skill 3 = skill defensivo
-    * Skill 4 = skill desicion
-    * Skill 5 = skill portero  
-    */
     
     
     int id;
@@ -197,6 +190,7 @@ class player {
 class equipo {
     int kk;
     List<player> jugadores = new ArrayList(); // lista de 20 jugadores
+    List<player> JugadoresActivos = new ArrayList(); // jugadores activos (11 jugadores)
     
     public equipo (int id) {
         kk=id;
@@ -220,6 +214,11 @@ class equipo {
     public player hasball() {
         return null;
     } 
+    
+    public player hasaction () 
+    {
+        return null;
+    }
     // me va a retorna que jugador del equipo (o la lista de arriba) tiene la pelota
 }
 
