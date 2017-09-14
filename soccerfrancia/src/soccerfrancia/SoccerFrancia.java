@@ -1,5 +1,5 @@
 /*
-RIP // ciclo de 11 y en cada iteracion recorer listad
+RIP 
  */
 
 package soccerfrancia;
@@ -70,8 +70,9 @@ public class SoccerFrancia extends Application {
 // clase juego
 class juego {
     int kk;
-    
-    public juego(int id) {
+    informacion info;
+    public juego(int id) throws IOException {
+        info = new informacion(1);
         kk=id;   
     }
     
@@ -157,6 +158,8 @@ class juego {
         // 0 1 2 3 4 5 6 7 8 9 || hay 10 numeros
         return randomNum < porcentaje;
     } // probabilidad de que algo suceda
+    
+
 }
 
 
@@ -307,26 +310,21 @@ class equipo {
 // clase info
 class informacion {
     int kk;
-    String log ="";
-    
-    public informacion (int id) {
+    int TiempoActual;
+    PrintWriter log;
+    String accion = "";
+ 
+    public informacion (int id) throws IOException {
         kk=id;
+        String dir1 = "C:\\Users\\Hector Lopez\\Documents\\GitHub\\soccerfrancia\\log.txt";
+        FileWriter fw1 = new FileWriter(dir1, true);
+        BufferedWriter bw1 = new BufferedWriter(fw1);
+        log = new PrintWriter(bw1); // log de eventos
  
     }
     
     public void AddLog() {
-        System.out.println(kk);
-        
-    }
-    public void SetLog() throws IOException {
-        String dir1 = "";
-      String  dir2 = "";
-        FileWriter fw1 = new FileWriter(dir1, true);
-            BufferedWriter bw1 = new BufferedWriter(fw1);
-            PrintWriter festudiante = new PrintWriter(bw1); // file de estudiante
-            FileWriter fw2 = new FileWriter(dir2, true);
-            BufferedWriter bw2 = new BufferedWriter(fw2);
-            PrintWriter fcalificaciones = new PrintWriter(bw2);  // file de calificaciones
-        
+        log.println("min"+TiempoActual+":"+" "+accion);
+        // 
     }
 }
