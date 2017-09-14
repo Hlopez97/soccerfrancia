@@ -16,10 +16,10 @@ import javafx.stage.Stage;
 import java.util.concurrent.ThreadLocalRandom;
 /**
  *
- * @author Hector
- * @author Mauro
- * @author Lucas
- * @author William 
+ * @author Hector Lopez
+ * @author Mauro Sosa
+ * @author Lucas Pradel
+ * @author William Diaz
  */
 
 
@@ -61,19 +61,17 @@ public class SoccerFrancia extends Application {
 }
 
 
-// clase juego
+// Clase juego
 class juego {
     int kk;
     
     public juego(int id) {
-        kk=id;
-        
-        
-        
+        kk=id;   
     }
     public void temp() {
         System.out.println(kk);
     }
+    
     public void action(equipo pel, equipo nopel)  {
         
         player juga = pel.hasball();
