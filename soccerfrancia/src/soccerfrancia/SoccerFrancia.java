@@ -68,8 +68,8 @@ public class SoccerFrancia extends Application {
 class juego {
     int kk;
     informacion info;
-    int minutos;
-    int segundos;
+    int minutos = 0;
+    int segundos = 0;
     
     public juego(int id) throws IOException {
         info = new informacion(1);
@@ -161,28 +161,26 @@ class juego {
         return randomNum < porcentaje;
     } // probabilidad de que algo suceda
     
-    public void Timer() {
+    public void Timer(int min, int seg) {
     
-        int minutos = 0;
-        int segundos = 0;
-        for (minutos = 0; minutos < 59; minutos++) 
+        for (min = 0; min < 59; min++) 
         {
-            for (segundos = 0; segundos < 59; segundos++)
+            for (seg = 0; seg < 59; seg++)
             {
-                if ((segundos  >= 0) && (segundos <= 9))
+                if ((seg  >= 0) && (seg <= 9))
                 {
-                    System.out.println(minutos+":0"+segundos);
+                    System.out.println(min+":0"+seg);
                     delaySegundo();
                 }
                 
                 else
                 {
-                System.out.println(minutos+":"+segundos);
+                System.out.println(min+":"+seg);
                 delaySegundo();
                 }                
             }
         }
-    } // Metodo timer 
+    } // Metodo timer que lleva el tiempo del juego
         
     public void delaySegundo() {
         
@@ -191,7 +189,7 @@ class juego {
             
         }
         catch(InterruptedException e){}
-    }
+    } // Metodo sleep
     
 }
 
