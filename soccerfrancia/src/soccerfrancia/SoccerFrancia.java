@@ -68,10 +68,13 @@ public class SoccerFrancia extends Application {
 class juego {
     int kk;
     informacion info;
+    int minutos;
+    int segundos;
+    
     public juego(int id) throws IOException {
         info = new informacion(1);
         kk=id;   
-    }
+    } // Metodo constructor
     
     public void recorrido(equipo ball, equipo noball) {
         if (ball.HasBall() != null) {
@@ -80,7 +83,8 @@ class juego {
         else { 
             action(noball,ball);
         }
-    } // me dice que hacer
+    } // Metodo que dice que hacer
+    
     public void action(equipo ball, equipo noball)  {
         String posicion = "";
         player PlayerConPelota = ball.HasBall();
@@ -150,22 +154,51 @@ class juego {
         
         
     } // una accion (pase, tiro etc)
+    
     public boolean probabilidad(int porcentaje) {
     int randomNum = ThreadLocalRandom.current().nextInt(0,100); // es de 0 a 9 incluyendo 9
         //  || hay 100 numeros
         return randomNum < porcentaje;
     } // probabilidad de que algo suceda
     
-
+    public void Timer() {
+    
+        int minutos = 0;
+        int segundos = 0;
+        for (minutos = 0; minutos < 59; minutos++) 
+        {
+            for (segundos = 0; segundos < 59; segundos++)
+            {
+                if ((segundos  >= 0) && (segundos <= 9))
+                {
+                    System.out.println(minutos+":0"+segundos);
+                    delaySegundo();
+                }
+                
+                else
+                {
+                System.out.println(minutos+":"+segundos);
+                delaySegundo();
+                }                
+            }
+        }
+    } // Metodo timer 
+        
+    public void delaySegundo() {
+        
+        try {   
+            Thread.sleep(1000);
+            
+        }
+        catch(InterruptedException e){}
+    }
+    
 }
 
 
 // clase player
 class player {
     // declaracion de variables iniciales
-    
-    
-    
     int id;
     String nombre;
     String posicion;
@@ -188,12 +221,10 @@ class player {
         
             
     }
-    
+    // Metodo constructor de player
     public void temp() {
         System.out.println(id);
-    }
-    
-    
+    } // Metodo temporal
     
 }
 
@@ -215,6 +246,7 @@ class equipo {
     public void start() {
      setplayers();  
     }
+    
     public void SetActivePlayers() {
         
         List<player> RandomList = Jugadores;
