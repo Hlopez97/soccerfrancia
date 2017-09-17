@@ -1,10 +1,15 @@
 /*
-RIP 
+RIP
  */
 
 package soccerfrancia;
-import java.io.File;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -14,12 +19,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import java.util.concurrent.ThreadLocalRandom;
-import java.io.PrintWriter;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Collections;
 /**
  *
  * @author Hector Lopez
@@ -66,8 +65,6 @@ public class SoccerFrancia extends Application {
     } 
 }
 
-
-// clase juego
 class juego {
     int kk;
     informacion info;
@@ -154,8 +151,8 @@ class juego {
         
     } // una accion (pase, tiro etc)
     public boolean probabilidad(int porcentaje) {
-    int randomNum = ThreadLocalRandom.current().nextInt(0,10); // es de 0 a 9 incluyendo 9
-        // 0 1 2 3 4 5 6 7 8 9 || hay 10 numeros
+    int randomNum = ThreadLocalRandom.current().nextInt(0,100); // es de 0 a 9 incluyendo 9
+        //  || hay 100 numeros
         return randomNum < porcentaje;
     } // probabilidad de que algo suceda
     
