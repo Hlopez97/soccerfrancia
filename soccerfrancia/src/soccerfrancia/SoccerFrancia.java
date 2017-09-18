@@ -59,34 +59,40 @@ public class SoccerFrancia extends Application {
         launch(args); // esto corre el metodo start
         
         // cualquier cosa aqui lo hace despues de correr el metodo start
-        int s = 4;
-        equipo madrid = new equipo(1);
-        madrid.temp();
+ 
     } 
 }
 
 class juego {
+    
     int kk;
     informacion info;
-    int minutos = 0;
-    int segundos = 0;
-    
+    equipo PrimerEquipo;
+    equipo SegundoEquipo;
+
     public juego(int id) throws IOException {
         info = new informacion(1);
-        kk=id;   
+        kk = id;
+        PrimerEquipo = new equipo(1);
+        SegundoEquipo = new equipo(2);   
     } // Metodo constructor
+    
+    public void start() {
+        
+        Timer();
+    }
     
     public void recorrido(equipo ball, equipo noball) {
         if (ball.HasBall() != null) {
-            action(ball,noball);
+            action(ball,noball, true);
         }
         else { 
-            action(noball,ball);
+            action(noball,ball, true);
         }
     } // Metodo que dice que hacer
     
-    public void action(equipo ball, equipo noball)  {
-        String posicion = "";
+    public void action(equipo ball, equipo noball, boolean x)  {
+        String posicion;
         player PlayerConPelota = ball.HasBall();
         if (PlayerConPelota == null)
         {
@@ -98,7 +104,6 @@ class juego {
             posicion = PlayerConPelota.posicion;
         }
         
-        boolean HasBall = PlayerConPelota.HasBall;
         int act = 0;
        
         if (posicion.equals("delantero"))  { act = 1; }
@@ -106,27 +111,32 @@ class juego {
         if (posicion.equals("defensa"))  { act = 3; }
         if (posicion.equals("portero"))  { act = 4; }
         // si tiene la pelota
-        if (HasBall) {     
+        if (x) {     
             switch(act) {
                 case 1:
                     // probabilidad de que tire
-                    if (probabilidad(8))
+                    if (Probabilidad(50))
                     {
-                        //tiro
                         
-                        // probabilidad de malla (incompleto)
-                        if (probabilidad(7))
+                        // probabilidad de malla
+                        if (Probabilidad(PlayerConPelota.skilloff-40)) // si es 100 seria 60
                         {
-                            System.out.println("y el jugador " +PlayerConPelota.nombre + "tira......");
-                            // gol
-                            if (probabilidad(9))
-                            {
-                                System.out.println("GOOOOL");
-                            }
                             
+                            // probabilidad de gol
+                            player portero = JugadorContrario(ball,noball,4);
+                            if (Probabilidad(PlayerConPelota.skilloff-(portero.skillpor-70)))
+                            {
+                                ball.Puntuacion++;
+                                info.AddLog(StrParaLog(PlayerConPelota,portero,1));
+                            }
                             
                         }
                         
+                        
+                    }
+                    // sino tira
+                    else 
+                    {
                         
                     }
                     break;
@@ -154,45 +164,168 @@ class juego {
         
         
     } // una accion (pase, tiro etc)
+   
+    public String StrParaLog(player uno, player dos, int x) {
+        /*
+        * x = 1 gol
+        * x = 2 pase
+        * x = 3 falta leve
+        * x = 4 falta grave (tarjeta roja)
+        * x = 5 corner
+        * x = 6 saque (de portero)
+        * x = 7 inicio
+        */
+        
+        
+        return "";
+    } // me tira el string que dice "el player 1 hizo algo player 2
     
-    public boolean probabilidad(int porcentaje) {
+    public boolean Probabilidad(int porcentaje) {
     int randomNum = ThreadLocalRandom.current().nextInt(0,100); // es de 0 a 9 incluyendo 9
         //  || hay 100 numeros
         return randomNum < porcentaje;
     } // probabilidad de que algo suceda
     
-    public void Timer(int min, int seg) {
-    
-        for (min = 0; min < 59; min++) 
+    public player JugadorContrario (equipo equipo1, equipo equipo2, int x) {
+        
+        player rol;
+        if (equipo1.HasBall() == null)
         {
-            for (seg = 0; seg < 59; seg++)
+            List<player> temporal = equipo1.JugadoresActivos;
+            Collections.shuffle(temporal);
+            
+            switch(x)
             {
-                if ((seg  >= 0) && (seg <= 9))
-                {
-                    System.out.println(min+":0"+seg);
-                    delaySegundo();
-                }
-                
-                else
-                {
-                System.out.println(min+":"+seg);
-                delaySegundo();
-                }                
+                case 1:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("delantero")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 2:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("centro")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 3:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("defensa")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 4:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("portero")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
             }
-        }
-    } // Metodo timer que lleva el tiempo del juego
-        
-    public void delaySegundo() {
-        
-        try {   
-            Thread.sleep(1000);
             
         }
-        catch(InterruptedException e){}
-    } // Metodo sleep
+        else
+        {
+            List<player> temporal = equipo2.JugadoresActivos;
+            Collections.shuffle(temporal);
+            switch(x)
+            {
+                case 1:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("delantero")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 2:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("centro")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 3:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("defensa")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 4:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("portero")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+            }
+        }
+ 
+        return null;
+    } // Metodo que devuelve un jugador del equipo qu no tiene la pelota
+    
+    public void Timer() {
+        
+        int min; int seg;
+        for (min = 0; min <= 89; min++) 
+        {
+            for (seg = 0; seg <= 59; seg++)
+            {
+                info.minActual = min;
+                info.segActual = seg;
+                
+                if ((min == 45) && (seg == 0))
+                {
+                    info.AddLog("Medio termino");
+                }
+                else
+                { 
+                    recorrido(PrimerEquipo, SegundoEquipo);
+                }
+              
+                DelaySegundo();
+            }
+        }
+        info.minActual = 90;
+        info.segActual = 00;
+        
+    } // Metodo timer que lleva el tiempo del juego
+        
+    public void DelaySegundo() {
+        
+        try {   
+            Thread.sleep(1000);    
+        } catch(InterruptedException e){}
+    } // Metodo que simula un seg de la vida real
     
 }
-
 
 // clase player
 class player {
@@ -209,7 +342,7 @@ class player {
     
     public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskilldes, int pskillpor) {
         // aqui se setean los valores iniciales, es el constructor
-        id=pid;
+        id = pid;
         posicion = pposicion;
         skilloff = pskilloff;
         skilldri= pskilldri;
@@ -217,35 +350,27 @@ class player {
         skilldes = pskilldes;
         skillpor = pskillpor;
         
-            
-    }
-    // Metodo constructor de player
-    public void temp() {
-        System.out.println(id);
-    } // Metodo temporal
+    } // Metodo constructor de player
     
 }
 
-
 //clase equipo con 20 instancia de clase player
 class equipo {
+    
     int Localid;
+    int Puntuacion = 0;
     List<player> Jugadores = new ArrayList(); // lista de 20 jugadores
     List<player> JugadoresActivos = new ArrayList(); // jugadores activos (11 jugadores)
     
     public equipo (int id) {
-        Localid=id;
-    }
-    
-    public void temp() {
-        System.out.println();
+        Localid = id;
     }
     
     public void start() {
-     setplayers();  
+        CrearEquipoActivo();  
     }
     
-    public void SetActivePlayers() {
+    public void CrearEquipoActivo() {
         
         List<player> RandomList = Jugadores;
         Collections.shuffle(RandomList);
@@ -297,7 +422,7 @@ class equipo {
         Jugadores.add(new player(2,"lucas","noC",50,30,20,-5,0));
         Jugadores.add(new player(2,"mauro","noC",0,0,0,0,0));
         
-    }
+    } // 
  
     public player HasBall() {
         int temp = JugadoresActivos.size();
@@ -337,10 +462,10 @@ class equipo {
 // clase info
 class informacion {
     int kk;
-    int TiempoActual;
+    int minActual;
+    int segActual;
     PrintWriter log;
-    String accion = "";
- 
+    
     public informacion (int id) throws IOException {
         kk=id;
         String dir1 = "C:\\Users\\Hector Lopez\\Documents\\GitHub\\soccerfrancia\\log.txt";
@@ -350,8 +475,8 @@ class informacion {
  
     }
     
-    public void AddLog() {
-        log.println("min"+TiempoActual+":"+" "+accion);
+    public void AddLog(String accion) {
+        log.println("["+minActual+":"+segActual+ "] -> " + accion);
         // 
     }
 }
