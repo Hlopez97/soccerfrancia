@@ -61,9 +61,9 @@ public class Grafica extends javax.swing.JFrame {
         Equipo_a = new javax.swing.JTextField();
         Equipo_b = new javax.swing.JTextField();
         Start = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         Fondo_log = new javax.swing.JLabel();
         Fondo_Campo = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -231,13 +231,17 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Equipo_b);
-        Equipo_b.setBounds(1220, 420, 90, 30);
+        Equipo_b.setBounds(1230, 420, 90, 30);
 
         Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Photoshop_General/Start_rezized.png"))); // NOI18N
         Start.setBorderPainted(false);
         Start.setContentAreaFilled(false);
         getContentPane().add(Start);
         Start.setBounds(1170, 540, 220, 100);
+
+        jButton1.setText("jButton1");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(1120, 390, 73, 25);
 
         Fondo_log.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Photoshop_General/Background_Contador.jpg"))); // NOI18N
         Fondo_log.setText("Fondo_Contador");
@@ -248,10 +252,6 @@ public class Grafica extends javax.swing.JFrame {
         Fondo_Campo.setText("Fondo_Campo");
         getContentPane().add(Fondo_Campo);
         Fondo_Campo.setBounds(0, 0, 960, 710);
-
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(1230, 430, 55, 19);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -348,6 +348,6 @@ public class Grafica extends javax.swing.JFrame {
     private javax.swing.JButton Restart;
     private javax.swing.JButton Start;
     private javax.swing.JLabel Tiempo;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
