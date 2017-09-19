@@ -1,4 +1,4 @@
-/*
+    /*
 RIP
  */
 
@@ -35,7 +35,10 @@ public class SoccerFrancia extends Application {
     public void start(Stage primaryStage) {
         // aqui empieza el programa
         
-        Button btn = new Button();
+        Grafica grafica = new Grafica();
+        grafica.setVisible(true);
+        
+        /*Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction
         (new EventHandler<ActionEvent>(){
@@ -52,7 +55,7 @@ public class SoccerFrancia extends Application {
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
-        primaryStage.show();
+        primaryStage.show();*/
     }
 
     public static void main(String[] args) {
@@ -293,6 +296,8 @@ class juego {
     
     public void Timer() {
         
+        Grafica grafica = new Grafica();
+        
         int min; int seg;
         for (min = 0; min <= 89; min++) 
         {
@@ -304,6 +309,7 @@ class juego {
                 if ((min == 45) && (seg == 0))
                 {
                     info.AddLog("Medio termino");
+                    
                 }
                 else
                 { 

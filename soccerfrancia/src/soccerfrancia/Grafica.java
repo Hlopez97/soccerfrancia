@@ -5,6 +5,8 @@
  */
 package soccerfrancia;
 
+import soccerfrancia.SoccerFrancia;
+
 /**
  *
  * @author Lucas
@@ -29,6 +31,7 @@ public class Grafica extends javax.swing.JFrame {
 
         Log_Juego = new javax.swing.JScrollPane();
         Log_Texto = new javax.swing.JTextField();
+        botonconfirmacion = new javax.swing.JButton();
         Def_a_1 = new javax.swing.JLabel();
         Def_a_2 = new javax.swing.JLabel();
         Def_a_3 = new javax.swing.JLabel();
@@ -36,7 +39,6 @@ public class Grafica extends javax.swing.JFrame {
         Med_a_1 = new javax.swing.JLabel();
         Med_a_2 = new javax.swing.JLabel();
         Med_a_3 = new javax.swing.JLabel();
-        Med_a_4 = new javax.swing.JLabel();
         Atc_a_1 = new javax.swing.JLabel();
         Atc_a_2 = new javax.swing.JLabel();
         Atc_a_3 = new javax.swing.JLabel();
@@ -51,7 +53,6 @@ public class Grafica extends javax.swing.JFrame {
         Med_b_1 = new javax.swing.JLabel();
         Med_b_2 = new javax.swing.JLabel();
         Med_b_3 = new javax.swing.JLabel();
-        Med_b_4 = new javax.swing.JLabel();
         Atc_b_1 = new javax.swing.JLabel();
         Atc_b_2 = new javax.swing.JLabel();
         Atc_b_3 = new javax.swing.JLabel();
@@ -63,15 +64,18 @@ public class Grafica extends javax.swing.JFrame {
         Start = new javax.swing.JButton();
         Fondo_log = new javax.swing.JLabel();
         Fondo_Campo = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setMinimumSize(new java.awt.Dimension(1400, 1250));
+        setName("SoccerFrancia"); // NOI18N
         getContentPane().setLayout(null);
 
         Log_Juego.setBackground(new java.awt.Color(153, 153, 153));
 
         Log_Texto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Log_Texto.setText("aqui va el texto de hector");
+        Log_Texto.setEnabled(false);
         Log_Texto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Log_TextoActionPerformed(evt);
@@ -82,53 +86,58 @@ public class Grafica extends javax.swing.JFrame {
         getContentPane().add(Log_Juego);
         Log_Juego.setBounds(960, 110, 410, 250);
 
+        botonconfirmacion.setText("Confirmacion formacion\n");
+        botonconfirmacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonconfirmacionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonconfirmacion);
+        botonconfirmacion.setBounds(1083, 490, 160, 23);
+
         Def_a_1.setText("jLabel3");
         getContentPane().add(Def_a_1);
-        Def_a_1.setBounds(190, 630, 34, 15);
+        Def_a_1.setBounds(190, 630, 34, 14);
 
         Def_a_2.setText("jLabel1");
         getContentPane().add(Def_a_2);
-        Def_a_2.setBounds(130, 250, 34, 15);
+        Def_a_2.setBounds(150, 260, 34, 14);
 
         Def_a_3.setText("jLabel1");
         getContentPane().add(Def_a_3);
-        Def_a_3.setBounds(130, 420, 34, 15);
+        Def_a_3.setBounds(150, 440, 34, 14);
 
         Def_a_4.setText("jLabel1");
         getContentPane().add(Def_a_4);
-        Def_a_4.setBounds(190, 60, 34, 15);
+        Def_a_4.setBounds(190, 70, 34, 14);
 
         Med_a_1.setText("jLabel1");
         getContentPane().add(Med_a_1);
-        Med_a_1.setBounds(280, 250, 34, 15);
+        Med_a_1.setBounds(280, 190, 34, 14);
 
         Med_a_2.setText("jLabel1");
         getContentPane().add(Med_a_2);
-        Med_a_2.setBounds(280, 440, 34, 15);
+        Med_a_2.setBounds(280, 510, 34, 14);
 
         Med_a_3.setText("jLabel1");
         getContentPane().add(Med_a_3);
-        Med_a_3.setBounds(340, 350, 34, 15);
-
-        Med_a_4.setText("jLabel1");
-        getContentPane().add(Med_a_4);
-        Med_a_4.setBounds(230, 350, 34, 15);
+        Med_a_3.setBounds(220, 350, 34, 14);
 
         Atc_a_1.setText("jLabel1");
         getContentPane().add(Atc_a_1);
-        Atc_a_1.setBounds(430, 350, 34, 15);
+        Atc_a_1.setBounds(410, 350, 34, 14);
 
         Atc_a_2.setText("jLabel1");
         getContentPane().add(Atc_a_2);
-        Atc_a_2.setBounds(420, 120, 34, 15);
+        Atc_a_2.setBounds(420, 120, 34, 14);
 
         Atc_a_3.setText("jLabel1");
         getContentPane().add(Atc_a_3);
-        Atc_a_3.setBounds(410, 640, 34, 15);
+        Atc_a_3.setBounds(420, 630, 34, 14);
 
         Portero_a.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Real Madrid/Porteros/1_rezized.png"))); // NOI18N
         getContentPane().add(Portero_a);
-        Portero_a.setBounds(10, 290, 110, 100);
+        Portero_a.setBounds(30, 320, 80, 80);
 
         Marcador.setText("Aqui va el contador");
         getContentPane().add(Marcador);
@@ -140,51 +149,47 @@ public class Grafica extends javax.swing.JFrame {
 
         Portero_b.setText("jLabel1");
         getContentPane().add(Portero_b);
-        Portero_b.setBounds(920, 350, 34, 15);
+        Portero_b.setBounds(890, 350, 34, 14);
 
         Def_b_1.setText("jLabel2");
         getContentPane().add(Def_b_1);
-        Def_b_1.setBounds(790, 630, 34, 15);
+        Def_b_1.setBounds(740, 630, 34, 14);
 
         Def_b_2.setText("jLabel1");
         getContentPane().add(Def_b_2);
-        Def_b_2.setBounds(790, 450, 34, 15);
+        Def_b_2.setBounds(770, 440, 34, 14);
 
         Def_b_3.setText("jLabel1");
         getContentPane().add(Def_b_3);
-        Def_b_3.setBounds(790, 260, 34, 15);
+        Def_b_3.setBounds(770, 260, 34, 14);
 
         Def_b_4.setText("jLabel1");
         getContentPane().add(Def_b_4);
-        Def_b_4.setBounds(790, 70, 34, 15);
+        Def_b_4.setBounds(740, 70, 34, 14);
 
         Med_b_1.setText("jLabel1");
         getContentPane().add(Med_b_1);
-        Med_b_1.setBounds(660, 190, 34, 15);
+        Med_b_1.setBounds(630, 190, 34, 14);
 
         Med_b_2.setText("jLabel1");
         getContentPane().add(Med_b_2);
-        Med_b_2.setBounds(660, 470, 34, 15);
+        Med_b_2.setBounds(640, 510, 34, 14);
 
         Med_b_3.setText("jLabel1");
         getContentPane().add(Med_b_3);
-        Med_b_3.setBounds(600, 350, 34, 15);
-
-        Med_b_4.setText("jLabel1");
-        getContentPane().add(Med_b_4);
-        Med_b_4.setBounds(710, 350, 34, 15);
+        Med_b_3.setBounds(710, 350, 34, 14);
 
         Atc_b_1.setText("jLabel1");
         getContentPane().add(Atc_b_1);
-        Atc_b_1.setBounds(500, 350, 34, 15);
+        Atc_b_1.setBounds(520, 350, 34, 14);
 
         Atc_b_2.setText("jLabel1");
         getContentPane().add(Atc_b_2);
-        Atc_b_2.setBounds(500, 120, 34, 15);
+        Atc_b_2.setBounds(500, 120, 34, 14);
 
         Atc_b_3.setText("jLabel1");
         getContentPane().add(Atc_b_3);
-        Atc_b_3.setBounds(510, 630, 34, 15);
+        Atc_b_3.setBounds(510, 630, 34, 14);
 
         Restart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Photoshop_General/Reset_rezized.png"))); // NOI18N
         Restart.setBorderPainted(false);
@@ -204,11 +209,11 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Formacion_a);
-        Formacion_a.setBounds(990, 460, 110, 24);
+        Formacion_a.setBounds(980, 450, 120, 20);
 
         Formacion_b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"4-3-3(a)", "4-3-3(b)" }));
         getContentPane().add(Formacion_b);
-        Formacion_b.setBounds(1220, 460, 120, 24);
+        Formacion_b.setBounds(1220, 450, 120, 20);
 
         Equipo_a.setBackground(new java.awt.Color(204, 204, 204));
         Equipo_a.setForeground(new java.awt.Color(102, 102, 102));
@@ -220,7 +225,7 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Equipo_a);
-        Equipo_a.setBounds(1000, 420, 70, 30);
+        Equipo_a.setBounds(1000, 390, 90, 30);
 
         Equipo_b.setBackground(new java.awt.Color(255, 51, 51));
         Equipo_b.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -231,11 +236,16 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Equipo_b);
-        Equipo_b.setBounds(1220, 420, 90, 30);
+        Equipo_b.setBounds(1230, 390, 90, 30);
 
         Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Photoshop_General/Start_rezized.png"))); // NOI18N
         Start.setBorderPainted(false);
         Start.setContentAreaFilled(false);
+        Start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartActionPerformed(evt);
+            }
+        });
         getContentPane().add(Start);
         Start.setBounds(1170, 540, 220, 100);
 
@@ -248,10 +258,6 @@ public class Grafica extends javax.swing.JFrame {
         Fondo_Campo.setText("Fondo_Campo");
         getContentPane().add(Fondo_Campo);
         Fondo_Campo.setBounds(0, 0, 960, 710);
-
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(1230, 430, 55, 19);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -275,6 +281,39 @@ public class Grafica extends javax.swing.JFrame {
     private void Formacion_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Formacion_aActionPerformed
 
     }//GEN-LAST:event_Formacion_aActionPerformed
+
+    private void botonconfirmacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonconfirmacionActionPerformed
+
+        if (Formacion_a.getSelectedIndex()==0){
+            //Med_a_4.setVisible(false);
+            //Med_a_3.setVisible(true);
+            Med_a_3.setBounds(220, 350, 34, 14);
+        }
+        else if (Formacion_a.getSelectedIndex()==1){
+            //Med_a_4.setVisible(true);
+            //Med_a_3.setVisible(false);
+            Med_a_3.setBounds(330, 350, 34, 14);
+        }
+        
+        if (Formacion_b.getSelectedIndex()==0){
+            //Med_b_4.setVisible(false);
+            //Med_b_3.setVisible(true);
+            Med_b_3.setBounds(710, 350, 34, 14);
+        }
+        else if (Formacion_b.getSelectedIndex()==1){
+            //Med_b_4.setVisible(true);
+            //Med_b_3.setVisible(false);
+            Med_b_3.setBounds(600, 350, 34, 14);
+        }
+// TODO add your handling code here:
+    }//GEN-LAST:event_botonconfirmacionActionPerformed
+
+    private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
+        Log_Texto.setText("Hola Hector \n");
+        
+        // TODO add your handling code here:
+        //Boton encargado de empezar el juego  
+    }//GEN-LAST:event_StartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -338,16 +377,14 @@ public class Grafica extends javax.swing.JFrame {
     private javax.swing.JLabel Med_a_1;
     private javax.swing.JLabel Med_a_2;
     private javax.swing.JLabel Med_a_3;
-    private javax.swing.JLabel Med_a_4;
     private javax.swing.JLabel Med_b_1;
     private javax.swing.JLabel Med_b_2;
     private javax.swing.JLabel Med_b_3;
-    private javax.swing.JLabel Med_b_4;
     private javax.swing.JLabel Portero_a;
     private javax.swing.JLabel Portero_b;
     private javax.swing.JButton Restart;
     private javax.swing.JButton Start;
     private javax.swing.JLabel Tiempo;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton botonconfirmacion;
     // End of variables declaration//GEN-END:variables
 }
