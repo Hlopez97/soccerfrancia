@@ -198,6 +198,19 @@ class juego {
                             if (Probabilidad(80))
                             {
                                 def.FaltasLeve++;
+                                // agregar amarilla
+                                if (def.FaltasLeve >= 4)
+                                {
+                                    def.FaltasLeve = 0;
+                                    def.TarjetaAmarilla++;
+                                    // si 2 amarilla, roja
+                                    if (def.TarjetaAmarilla > 1)
+                                    {
+                                        def.TarjetaAmarilla = 0;
+                                        
+                                    }
+                                    
+                                }
                                 
                             }
                             // falta grave
@@ -526,9 +539,10 @@ class equipo {
     } // Metodo que devuelve el jugador que va a hacer una accion
     
     public void Reemplazoplayer(player p){
+        
         for (int a = 0; a< JugadoresActivos.size(); a++)
         {
-            if (JugadoresActivos.get(a) == p) 
+            if (JugadoresActivos.get(a).id == p.id) 
             {
                 JugadoresActivos.remove(a);
                 JugadoresActivos.add(a, p);
@@ -538,6 +552,16 @@ class equipo {
         
         
     } // despues de cada accion por obligacion hay que reemplazar al player
+    
+    public void QuitarPlayer (player rip){
+    for (int a = 0; a< JugadoresActivos.size(); a++)
+        {
+            if (JugadoresActivos.get(a).id == rip.id) 
+            {
+                JugadoresActivos.remove(a);
+            }
+        }
+    } // quita un jugador por falta
 }
 
 
