@@ -113,7 +113,7 @@ class juego {
                 case 1:
                     player portero = JugadorContrario(ball,noball,4);
                     // probabilidad de que tire
-                    if (Probabilidad(50))
+                    if (Probabilidad(80))
                     {
                         
                         // probabilidad de malla
@@ -176,7 +176,7 @@ class juego {
                         
                         
                         }
-                        // sino malla ni palo, fallo, saque de portero
+                        // sino malla ni palo, osea el fallo, saque de portero
                         else
                         {
                             PlayerConPelota.HasBall = false;
@@ -190,23 +190,25 @@ class juego {
                     // sino tira
                     else 
                     {
-                        // si hace falta
-                        if (Probabilidad(50))
+                        // si le hacen falta
+                        if (Probabilidad(40))
                         {
                             player def = JugadorContrario(ball,noball,3);
                             // falta leve
                             if (Probabilidad(80))
                             {
                                 def.FaltasLeve++;
-                                // agregar amarilla
+                                // agregar amarilla si necesario
                                 if (def.FaltasLeve >= 4)
                                 {
                                     def.FaltasLeve = 0;
                                     def.TarjetaAmarilla++;
-                                    // si 2 amarilla, roja
+                                    // si 2 amarilla, crea una roja
                                     if (def.TarjetaAmarilla > 1)
                                     {
                                         def.TarjetaAmarilla = 0;
+                                        noball.QuitarPlayer(def);
+                                        info.AddLog(StrParaLog(def,portero,15)); 
                                         
                                     }
                                     
@@ -216,11 +218,18 @@ class juego {
                             // falta grave
                             else 
                             {
+                                // si causa daño
+                                if (Probabilidad(25))
+                                {
+                                    
+                                }
+                                
                                 
                             }
                             
                         }
-                        else if (Probabilidad(50)){}
+                        // sino le hacen falta, aka no hacer nada este minuto
+                        else {}
                         
                     }
                     
@@ -255,6 +264,7 @@ class juego {
         * x = 12 palo y sale para afuera (saque de portero)
         * x = 13 palo y gol
         * x = 14 tira y sale de campo
+        * x = 15 eliminacion de jugador del campo por tarjeta roja (1)
         */
         
         
@@ -262,7 +272,7 @@ class juego {
     } // me tira el string que dice "el player 1 hizo algo player 2
     
     public boolean Probabilidad(int porcentaje) {
-    int randomNum = ThreadLocalRandom.current().nextInt(0,100); // es de 0 a 9 incluyendo 9
+    int randomNum = ThreadLocalRandom.current().nextInt(0,100); // es de 0 a 99 incluyendo 99
         //  || hay 100 numeros
         return randomNum < porcentaje;
     } // probabilidad de que algo suceda
@@ -443,6 +453,7 @@ class equipo {
     int Puntuacion = 0;
     List<player> Jugadores = new ArrayList(); // lista de 20 jugadores
     List<player> JugadoresActivos = new ArrayList(); // jugadores activos (11 jugadores)
+    int cambios = 0;
     
     public equipo (int id) {
         Localid = id;
