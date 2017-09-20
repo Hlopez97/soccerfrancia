@@ -146,7 +146,6 @@ class juego {
             action(noball,ball);
         }
     } // Metodo que dice que hacer
-
     
     public void action(equipo ball, equipo noball)  {
         
@@ -512,6 +511,111 @@ class juego {
         return null;
     } // Metodo que devuelve un jugador del equipo qu no tiene la pelota
     
+    public player JugadorEquipo (equipo equipo1, equipo equipo2, int x) {
+        
+        player rol;
+        if (equipo1.HasBall() == null)
+        {
+            List<player> temporal = equipo1.JugadoresActivos;
+            Collections.shuffle(temporal);
+            
+            switch(x)
+            {
+                case 1:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("delantero")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 2:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("centro")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 3:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("defensa")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 4:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("portero")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+            }
+            
+        }
+        else
+        {
+            List<player> temporal = equipo2.JugadoresActivos;
+            Collections.shuffle(temporal);
+            switch(x)
+            {
+                case 1:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("delantero")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 2:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("centro")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 3:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("defensa")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+                case 4:
+                    for(int i = 0; i <= temporal.size();i++)
+                    {
+                        rol = temporal.get(i);
+                        if (rol.posicion.equals("portero")) 
+                        {
+                            return rol;
+                        }
+                    }
+                    break;
+            }
+        }
+ 
+        return null;
+    } // Metodo que devuelve un jugador del equipo tiene la pelota
+    
     public void Timer() {
         
         int min; int seg;
@@ -612,6 +716,7 @@ class equipo {
     int Puntuacion = 0;
     List<player> Jugadores = new ArrayList(); // lista de 20 jugadores
     List<player> JugadoresActivos = new ArrayList(); // jugadores activos (11 jugadores)
+    List<player> JugadoresBanca = new ArrayList(); // jugadores en banca (9 jugadores)
     int cambios = 0;
     
     public equipo (int id) {
@@ -622,7 +727,11 @@ class equipo {
         CrearEquipoActivo(Localid);  
     }
     
-    public player JugadorEquipo (String posicion){return null;} // me devuelve un jugador de la posicion de jugadoresactivos (INCOMPLETO)
+    public player JugadorEquipo (String posicion){
+    
+        
+    return null;
+    } // me devuelve un jugador de la posicion de jugadoresactivos (INCOMPLETO)
     
     public void CrearEquipoActivo(int x) {
         
@@ -670,7 +779,24 @@ class equipo {
         
     } // Metodo que forma los grupos de jugadores que van a participar a partir de su equipo
     
- 
+    public void CrearBanca() {
+        
+        player x;
+        int j = 0;
+        while (j < 20)
+        {
+            x = Jugadores.get(j);
+            if (JugadoresActivos.contains(x))
+            {
+            }
+            else
+            {
+                JugadoresBanca.add(x);
+            }
+         j++;   
+        }
+    } // Metodo que crea la lista con los jugadores de banca
+    
     public player HasBall() {
         int temp = JugadoresActivos.size();
         int x = 0;
@@ -728,10 +854,63 @@ class equipo {
         }
     } // quita un jugador por falta
     
-    public void SubstitucionDePlayer(player rip) {
-     
+    public player CambioJugador (player x) {
+    
+        for (int i = 0; i < JugadoresActivos.size(); i++)
+        {
+            player k = JugadoresActivos.get(i);
+            if (k.id == x.id)
+            {
+                for (int j = 0; j < JugadoresBanca.size(); j++)
+                {
+                    player l = JugadoresBanca.get(j);
+                    if (x.posicion.equals(l.posicion))
+                    {
+                        int s = JugadoresActivos.indexOf(x);
+                        int d = JugadoresBanca.indexOf(l);
+                        JugadoresActivos.remove(k);
+                        JugadoresBanca.remove(l);
+                        JugadoresActivos.add(s, l);
+                        JugadoresBanca.add(d, k);
+                        return l;
+                    }
+                    else
+                    {
+                    }
+                }
+            }
+            else
+            {
+            }    
+        }
+    	return null;  
+    } // Metodo que cambia el jugador por uno de la banca
+    
+    public player JugadorPosicion (player x) {
         
-    } // me cambia a el player de jugadores activo por uno de jugadoresbanca (INCOMPLETO)
+        for (int i = 0; i < JugadoresActivos.size(); i++)
+        {
+            player k = JugadoresActivos.get(i);
+            if (k.id == x.id)
+            {
+                for (int j = 0; j < JugadoresBanca.size(); j++)
+                {
+                    player l = JugadoresBanca.get(j);
+                    if (x.posicion.equals(l.posicion))
+                    {
+                        return l;
+                    }
+                    else
+                    {
+                    }
+                }
+            }
+            else
+            {
+            }    
+        }
+        return null;    
+    }
 }
 
 
