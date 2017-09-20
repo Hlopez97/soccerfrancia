@@ -72,20 +72,71 @@ class juego {
     informacion info;
     equipo PrimerEquipo;
     equipo SegundoEquipo;
+    boolean gg = false;
+    boolean inicio = true;
 
     public juego(int id) throws IOException {
         info = new informacion(1);
         kk = id;
         PrimerEquipo = new equipo(1);
-        PrimerEquipo.start();
         SegundoEquipo = new equipo(2);   
+        setplayers(PrimerEquipo, SegundoEquipo);
+        PrimerEquipo.start();
         SegundoEquipo.start();
+        
     } // Metodo constructor
     
     public void start() {
         
         Timer();
     }
+    
+    public void setplayers(equipo uno, equipo dos) {
+        uno.Jugadores.add(new player(1,"lucas","delantero",70,50,20,0));     
+        uno.Jugadores.add(new player(3,"lucas","delantero",70,50,20,0));
+        uno.Jugadores.add(new player(4,"lucas","delantero",70,50,20,0));
+        uno.Jugadores.add(new player(9,"lucas","delantero",70,50,20,0));
+        uno.Jugadores.add(new player(17,"lucas","delantero",70,50,20,0));
+        uno.Jugadores.add(new player(5,"lucas","centro",70,50,20,0));
+        uno.Jugadores.add(new player(6,"lucas","centro",70,50,20,0));
+        uno.Jugadores.add(new player(7,"lucas","centro",70,50,20,0));
+        uno.Jugadores.add(new player(8,"lucas","centro",70,50,20,0));
+        uno.Jugadores.add(new player(2,"lucas","portero",70,50,20,90));
+        uno.Jugadores.add(new player(10,"lucas","portero",70,50,20,0));
+        uno.Jugadores.add(new player(11,"lucas","portero",70,50,20,0));
+        uno.Jugadores.add(new player(12,"lucas","defensa",70,50,20,0));
+        uno.Jugadores.add(new player(13,"lucas","defensa",70,50,20,0));
+        uno.Jugadores.add(new player(14,"lucas","defensa",70,50,20,0));
+        uno.Jugadores.add(new player(15,"lucas","defensa",70,50,20,0));
+        uno.Jugadores.add(new player(16,"lucas","defensa",70,50,20,0));
+        uno.Jugadores.add(new player(20,"lucas","centro",70,50,20,0));
+        uno.Jugadores.add(new player(18,"lucas","centro",70,50,20,0));
+        uno.Jugadores.add(new player(19,"lucas","delantero",70,50,20,0));
+        
+        // dos
+        
+        dos.Jugadores.add(new player(1,"lucas","delantero",70,50,20,0));     
+        dos.Jugadores.add(new player(3,"lucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(4,"lucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(9,"lucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(17,"lucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(5,"lucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(6,"lucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(7,"lucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(8,"lucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(2,"lucas","portero",70,50,20,90));
+        dos.Jugadores.add(new player(10,"lucas","portero",70,50,20,0));
+        dos.Jugadores.add(new player(11,"lucas","portero",70,50,20,0));
+        dos.Jugadores.add(new player(12,"lucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(13,"lucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(14,"lucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(15,"lucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(16,"lucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(20,"lucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(18,"lucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(19,"lucas","delantero",70,50,20,0));
+        
+    } // crea los 20 jugadores por equipo
     
     public void recorrido(equipo ball, equipo noball) {
         if (ball.HasBall() != null) {
@@ -170,7 +221,6 @@ class juego {
                                 PlayerConPelota.HasBall = false;
                                 ball.Reemplazoplayer(centro);
                                 ball.Reemplazoplayer(PlayerConPelota); 
-                                
                             }
                             
                         
@@ -208,12 +258,27 @@ class juego {
                                     {
                                         def.TarjetaAmarilla = 0;
                                         noball.QuitarPlayer(def);
-                                        info.AddLog(StrParaLog(def,portero,15)); 
+                                        info.AddLog(StrParaLog(def,portero,15));
+                                        
+                                        // si 5 roja 
+                                        if (noball.JugadoresActivos.size() < 7)
+                                        {
+                                            gg = true;
+                                            info.AddLog(StrParaLog(def,portero,17));
+                                        }
                                         
                                     }
                                     
                                 }
-                                
+                                if (!gg)
+                                {
+                                    player n = ball.JugadorEquipo("centro");
+                                    n.HasBall = true;
+                                    PlayerConPelota.HasBall = false;
+                                    ball.Reemplazoplayer(n);
+                                    ball.Reemplazoplayer(PlayerConPelota);  
+                                    info.AddLog(StrParaLog(PlayerConPelota,n,15));
+                                }   
                             }
                             // falta grave
                             else 
@@ -221,15 +286,36 @@ class juego {
                                 // si causa daño
                                 if (Probabilidad(25))
                                 {
+                                    // si se le acabo los cambios
+                                    if (ball.cambios > 3)
+                                    {
+                                        ball.QuitarPlayer(PlayerConPelota);
+                                        info.AddLog(StrParaLog(PlayerConPelota,null,20));
+                                        
+                                        if (ball.JugadoresActivos.size() < 7)
+                                        {
+                                            gg = true;
+                                            info.AddLog(StrParaLog(null,null,17));
+                                        }
+                                        
+                                    }
+                                    else 
+                                    {
+                                        info.AddLog(StrParaLog(PlayerConPelota,null,21));
+                                        ball.SubstitucionDePlayer(PlayerConPelota);
+                                        ball.cambios++;
+                                    }
                                     
                                 }
-                                
+                                // ahora hay que sacar al que hizo la falta
+                                noball.QuitarPlayer(def);
+                                info.AddLog(StrParaLog(def,null,24));
                                 
                             }
                             
                         }
                         // sino le hacen falta, aka no hacer nada este minuto
-                        else {}
+                        else {info.AddLog(StrParaLog(PlayerConPelota,null,23));}
                         
                     }
                     
@@ -265,10 +351,20 @@ class juego {
         * x = 13 palo y gol
         * x = 14 tira y sale de campo
         * x = 15 eliminacion de jugador del campo por tarjeta roja (1)
+        * x = 16 no hizo nada
+        * x = 17 gg (0)
+        * x = 18 inicio
+        * x = 19 recibe la pelota (despues de inicio)
+        * x = 20 sale el jugador por ser herido (1)
+        * x = 21 se cambia un jugador por otro (1) // ej: sale jose por herida y es reemplazado!
+        * x = 22 le hicieron falta y ahora saca un centro   // ej: le dieron a jose y ahora saca el centro mauro
+        * x = 23 literalmente no hacer nada (1) // ej. el esta dribleando y mantiene la pelota
+        * x = 24 sale jugador por tarjeta roja
         */
         
         
-        return "";
+        
+        return "accion";
     } // me tira el string que dice "el player 1 hizo algo player 2
     
     public boolean Probabilidad(int porcentaje) {
@@ -397,9 +493,18 @@ class juego {
                     info.AddLog("Medio termino");
                 }
                 else
-                { 
+                {
+                    if (inicio)
+                    {
+                        info.AddLog(StrParaLog(null,null,18));
+                        inicio();  
+                    }
+                    else if (!gg)
+                    {
                     recorrido(PrimerEquipo, SegundoEquipo);
                     System.out.println(seg);
+                    }
+                    else {System.out.println("se acabo el juego!");}
                 }
               
                 DelaySegundo();
@@ -407,8 +512,28 @@ class juego {
         }
         info.minActual = 90;
         info.segActual = 00;
-        
+        System.out.println("se acabo el juego!");
     } // Metodo timer que lleva el tiempo del juego
+    
+    public void inicio(){
+    
+        // si equipo 1 recibe la pelota
+        if (Probabilidad(50))
+        {
+            
+            player s = PrimerEquipo.JugadorEquipo("centro");
+            info.AddLog(StrParaLog(s,null,19));
+            s.HasBall = true;
+            PrimerEquipo.Reemplazoplayer(s);
+        }
+        else 
+        {
+            player s = SegundoEquipo.JugadorEquipo("centro");
+            info.AddLog(StrParaLog(s,null,19));
+            s.HasBall = true;
+            SegundoEquipo.Reemplazoplayer(s);
+        }
+    } // el primer saque
         
     public void DelaySegundo() {
         
@@ -425,21 +550,21 @@ class player {
     int id;
     String nombre;
     String posicion;
-    int skilloff; int skilldri; int skilldef; int skilldes; int skillpor;
+    int skilloff; int skilldri; int skilldef;  int skillpor;
     boolean HasBall = false; // false hasta que empieza el juego
     int FaltasLeve; int TarjetaAmarilla;
     boolean FaltaGrave;  // si tiene falta grave es lo mismo que tarjeta roja y es out, no hay mas de una por lo que puede ser bool
     boolean EstaHerido;
     boolean PlayerAccion = false;
     
-    public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskilldes, int pskillpor) {
+    public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskillpor) {
         // aqui se setean los valores iniciales, es el constructor
         id = pid;
         posicion = pposicion;
         skilloff = pskilloff;
         skilldri= pskilldri;
         skilldef = pskilldef;
-        skilldes = pskilldes;
+        
         skillpor = pskillpor;
         
     } // Metodo constructor de player
@@ -463,6 +588,8 @@ class equipo {
         CrearEquipoActivo(Localid);  
     }
     
+    public player JugadorEquipo (String posicion){return null;} // me devuelve un jugador de la posicion de jugadoresactivos
+    public player JugadorBanca (String posicion){return null;} // me devuelve un jugador de la posicion de jugadores
     public void CrearEquipoActivo(int x) {
         
         List<player> RandomList = Jugadores;
@@ -509,13 +636,6 @@ class equipo {
         
     } // Metodo que forma los grupos de jugadores que van a participar a partir de su equipo
     
-    public void setplayers() {
-        // asi se crean jugadores nuevos dentro del equipo 
-        Jugadores.add(new player(1,"ronaldoElDios","delantero",100,50,0,100,0));
-        Jugadores.add(new player(2,"lucas","noC",50,30,20,-5,0));
-        Jugadores.add(new player(2,"mauro","noC",0,0,0,0,0));
-        
-    } // 
  
     public player HasBall() {
         int temp = JugadoresActivos.size();
@@ -573,6 +693,18 @@ class equipo {
             }
         }
     } // quita un jugador por falta
+    
+    public void SubstitucionDePlayer(player rip) {
+        for (int a = 0; a< JugadoresActivos.size(); a++)
+        {
+            if (JugadoresActivos.get(a).id == rip.id) 
+            {
+                JugadoresActivos.remove(a);
+                player add = JugadorBanca(rip.posicion);
+                JugadoresActivos.add(add);
+            }
+        }
+    } // me cambia a el player de jugadores activo por uno de jugadores
 }
 
 
@@ -586,7 +718,7 @@ class informacion {
     
     public informacion (int id) throws IOException {
         kk=id;
-        String dir1 = "C:\\Users\\HectorLopez\\Documents\\GitHub\\soccerfrancia\\loga.txt";
+        String dir1 = "C:\\Users\\Hector Lopez\\Desktop\\s\\log.txt";
         FileWriter fw1 = new FileWriter(dir1, true);
         BufferedWriter bw1 = new BufferedWriter(fw1);
         log = new PrintWriter(bw1); // log de eventos
