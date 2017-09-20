@@ -622,7 +622,8 @@ class equipo {
         CrearEquipoActivo(Localid);  
     }
     
-    public player JugadorEquipo (String posicion){return null;} // me devuelve un jugador de la posicion de jugadoresactivos
+    public player JugadorEquipo (String posicion){return null;} // me devuelve un jugador de la posicion de jugadoresactivos (INCOMPLETO)
+    
     public void CrearEquipoActivo(int x) {
         
         List<player> RandomList = Jugadores;
