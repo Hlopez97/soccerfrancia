@@ -322,6 +322,16 @@ class juego {
                     break;
                     
                 case 2:
+                    
+                    // probabilidad que un centro le de pase a un delantero
+                    if (Probabilidad(85))
+                    {
+                        
+                    }
+                    // probabilidad de que centro pase a centro
+                    else if (Probabilidad(15)) {}
+                    
+                    
                     break;
                 case 3:
                     break;
@@ -704,7 +714,7 @@ class equipo {
                 JugadoresActivos.add(add);
             }
         }
-    } // me cambia a el player de jugadores activo por uno de jugadores
+    } // me cambia a el player de jugadores activo por uno de jugadoresbanca
 }
 
 
