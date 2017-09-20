@@ -330,12 +330,36 @@ class juego {
                     }
                     // probabilidad de que centro pase a centro
                     else if (Probabilidad(15)) {}
+                    // que le quiten la pelota
+                    else 
+                    {
+                        
+                        
+                    }
                     
                     
                     break;
                 case 3:
+                    
+                    // probabilidad que un def le de pase a un centro
+                    if (Probabilidad(85))
+                    {
+                        
+                    }
+                    // probabilidad de que def pase a def
+                    else if (Probabilidad(15)) {}
+                    // que le quiten la pelota
+                    else 
+                    {
+                        
+                        
+                    }
+                    
+                    
                     break;
-                case 4:
+                case 4:                   
+                    // portero le da la pelota a un def 
+                    
                     break;
                               
         }     
@@ -705,16 +729,9 @@ class equipo {
     } // quita un jugador por falta
     
     public void SubstitucionDePlayer(player rip) {
-        for (int a = 0; a< JugadoresActivos.size(); a++)
-        {
-            if (JugadoresActivos.get(a).id == rip.id) 
-            {
-                JugadoresActivos.remove(a);
-                player add = JugadorBanca(rip.posicion);
-                JugadoresActivos.add(add);
-            }
-        }
-    } // me cambia a el player de jugadores activo por uno de jugadoresbanca
+     
+        
+    } // me cambia a el player de jugadores activo por uno de jugadoresbanca (INCOMPLETO)
 }
 
 
