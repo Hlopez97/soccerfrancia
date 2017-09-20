@@ -623,7 +623,6 @@ class equipo {
     }
     
     public player JugadorEquipo (String posicion){return null;} // me devuelve un jugador de la posicion de jugadoresactivos
-    public player JugadorBanca (String posicion){return null;} // me devuelve un jugador de la posicion de jugadores
     public void CrearEquipoActivo(int x) {
         
         List<player> RandomList = Jugadores;
