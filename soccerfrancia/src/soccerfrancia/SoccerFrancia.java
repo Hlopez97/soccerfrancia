@@ -115,26 +115,26 @@ class juego {
         
         // dos
         
-        dos.Jugadores.add(new player(1,"lucas","delantero",70,50,20,0));     
-        dos.Jugadores.add(new player(3,"lucas","delantero",70,50,20,0));
-        dos.Jugadores.add(new player(4,"lucas","delantero",70,50,20,0));
-        dos.Jugadores.add(new player(9,"lucas","delantero",70,50,20,0));
-        dos.Jugadores.add(new player(17,"lucas","delantero",70,50,20,0));
-        dos.Jugadores.add(new player(5,"lucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(6,"lucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(7,"lucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(8,"lucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(2,"lucas","portero",70,50,20,90));
-        dos.Jugadores.add(new player(10,"lucas","portero",70,50,20,0));
-        dos.Jugadores.add(new player(11,"lucas","portero",70,50,20,0));
-        dos.Jugadores.add(new player(12,"lucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(13,"lucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(14,"lucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(15,"lucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(16,"lucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(20,"lucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(18,"lucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(19,"lucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(1,"zlucas","delantero",70,50,20,0));     
+        dos.Jugadores.add(new player(3,"zlucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(4,"zlucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(9,"zlucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(17,"zlucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(5,"zlucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(6,"zlucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(7,"zlucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(8,"zlucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(2,"zlucas","portero",70,50,20,90));
+        dos.Jugadores.add(new player(10,"zlucas","portero",70,50,20,80));
+        dos.Jugadores.add(new player(11,"zlucas","portero",70,50,20,80));
+        dos.Jugadores.add(new player(12,"zlucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(13,"zlucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(14,"zlucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(15,"zlucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(16,"zlucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(20,"zlucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(18,"zlucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(19,"zlucas","delantero",70,50,20,0));
         
     } // crea los 20 jugadores por equipo
     
@@ -142,15 +142,17 @@ class juego {
         if (ball.HasBall() != null) {
             action(ball,noball);
         }
-        else { 
+        else if (noball.HasBall() != null) { 
             action(noball,ball);
         }
+        else {System.out.println("esto nunca deberia ocurrir");}
     } // Metodo que dice que hacer
-    
+
     public void action(equipo ball, equipo noball)  {
         
         player PlayerConPelota = ball.HasBall();
         String posicion = PlayerConPelota.posicion;
+        
         
         int act = 0;
        
@@ -158,16 +160,16 @@ class juego {
         if (posicion.equals("centro"))  { act = 2; }
         if (posicion.equals("defensa"))  { act = 3; }
         if (posicion.equals("portero"))  { act = 4; }
-        // si tiene la pelota    
+        
             switch(act) {
                 case 1:
                     player portero = JugadorContrario(ball,noball,4);
-                    // probabilidad de que tire
-                    if (Probabilidad(80))
+                    // probabilidad de que tire 80
+                    if (Probabilidad(100))
                     {
                         
-                        // probabilidad de malla
-                        if (Probabilidad(PlayerConPelota.skilloff-40)) // si es 100 seria 60
+                        // probabilidad de malla PlayerConPelota.skilloff-40
+                        if (Probabilidad(0)) // si es 100 seria 60
                         {
                             
                             // probabilidad de gol
@@ -193,8 +195,8 @@ class juego {
                             }     
                         
                         }
-                        // sino no malla y  si palo
-                        else if (Probabilidad(5))
+                        // sino no malla y  si palo 5
+                        else if (Probabilidad(0))
                         {
                             // tira denuevo
                             if (Probabilidad(30))
@@ -230,9 +232,10 @@ class juego {
                         {
                             PlayerConPelota.HasBall = false;
                             info.AddLog(StrParaLog(PlayerConPelota,portero,14));
-                            ball.Reemplazoplayer(PlayerConPelota);
+                            ball.Reemplazoplayer(PlayerConPelota);                            
                             portero.HasBall = true;
                             ball.Reemplazoplayer(portero);
+    
                         }
                         
                     }
@@ -301,7 +304,7 @@ class juego {
                                     else 
                                     {
                                         info.AddLog(StrParaLog(PlayerConPelota,null,21));
-                                        ball.SubstitucionDePlayer(PlayerConPelota);
+                                        ball.CambioJugador(PlayerConPelota);
                                         ball.cambios++;
                                     }
                                     
@@ -322,17 +325,41 @@ class juego {
                     
                 case 2:
                     
-                    // probabilidad que un centro le de pase a un delantero
-                    if (Probabilidad(85))
+                    // probabilidad que un centro le de pase a un delantero 85
+                    if (Probabilidad(100))
                     {
+                        PlayerConPelota.HasBall = false;
+                        player del = ball.JugadorEquipo("delantero");
+                        del.HasBall = true;
+                        System.out.println(PlayerConPelota.id + " "  + PlayerConPelota.nombre);
+                        System.out.println(del.id + " " + del.nombre);
+                        ball.Reemplazoplayer(del);
+                        ball.Reemplazoplayer(PlayerConPelota);
+                        info.AddLog(StrParaLog(PlayerConPelota,del,102));
                         
                     }
                     // probabilidad de que centro pase a centro
-                    else if (Probabilidad(15)) {}
+                    else if (Probabilidad(15)) 
+                    {
+                        PlayerConPelota.HasBall = false;
+                        player cen = ball.JugadorEquipo("centro");
+                        cen.HasBall = true;
+                        
+                        ball.Reemplazoplayer(cen);
+                        ball.Reemplazoplayer(PlayerConPelota);
+                        info.AddLog(StrParaLog(PlayerConPelota,cen,2));
+                        
+                    }
                     // que le quiten la pelota
                     else 
                     {
-                        
+                        player boo = JugadorContrario(ball,noball,2);
+                        // aqui iria la prob de falta
+                        boo.HasBall= true;
+                        PlayerConPelota.HasBall = false;
+                        ball.Reemplazoplayer(PlayerConPelota);
+                        noball.Reemplazoplayer(boo);
+                        info.AddLog(StrParaLog(boo,PlayerConPelota,25));
                         
                     }
                     
@@ -344,21 +371,40 @@ class juego {
                     if (Probabilidad(85))
                     {
                         
+                        PlayerConPelota.HasBall = false;
+                        player cen = ball.JugadorEquipo("centro");
+                        cen.HasBall = true;
+                        ball.Reemplazoplayer(cen);
+                        ball.Reemplazoplayer(PlayerConPelota);
+                        info.AddLog(StrParaLog(PlayerConPelota,cen,2));
+                        
                     }
                     // probabilidad de que def pase a def
-                    else if (Probabilidad(15)) {}
-                    // que le quiten la pelota
-                    else 
-                    {
+                    else
+                    {  
+                        PlayerConPelota.HasBall = false;
+                        player cen = ball.JugadorEquipo("defensa");
+                        cen.HasBall = true;
                         
-                        
+                        ball.Reemplazoplayer(cen);
+                        ball.Reemplazoplayer(PlayerConPelota);
+                        info.AddLog(StrParaLog(PlayerConPelota,cen,2));
                     }
+                    
+                    
                     
                     
                     break;
-                case 4:                   
-                    // portero le da la pelota a un def 
-                    
+                case 4:    
+                    PlayerConPelota.HasBall = false;
+                    player cen = ball.JugadorEquipo("defensa");
+                    cen.HasBall = true;
+                    System.out.println(PlayerConPelota.id + " "  + PlayerConPelota.nombre);
+                    System.out.println(cen.id + " " + cen.nombre);      
+                    ball.Reemplazoplayer(cen);
+                    ball.Reemplazoplayer(PlayerConPelota);
+                    info.AddLog(StrParaLog(PlayerConPelota,cen,2));
+                    // portero le da la pelota a un def                     
                     break;
                               
         }     
@@ -366,38 +412,351 @@ class juego {
         
         
     } // una accion (pase, tiro etc)
+    
+
+    public void action1() {
+        
+        // determinar cual es el id del jugador con la pelota
+        int id = 0;
+        for (int a = 0; a < PrimerEquipo.JugadoresActivos.size(); a++)
+        {
+            if (PrimerEquipo.JugadoresActivos.get(a).HasBall = true)
+            {
+                id = a;
+            }
+        }
+        
+        // ahora determinar su rol
+        
+        int cases = 0;
+        if (id == 0){System.out.println("RIP, esto nunca deberia ocurrir");}
+        else if (PrimerEquipo.JugadoresActivos.get(id).posicion.equals("delantero"))
+        {
+            cases = 1;
+        }
+        else if (PrimerEquipo.JugadoresActivos.get(id).posicion.equals("centro"))
+        {
+            cases = 2;
+        }
+        else if (PrimerEquipo.JugadoresActivos.get(id).posicion.equals("defensa"))
+        {
+            cases = 3;
+        }
+        else if (PrimerEquipo.JugadoresActivos.get(id).posicion.equals("portero"))
+        {
+            cases = 4;
+        }
+        
+        // ahora empieza la accion, usando su rol en switch
+        
+        /* if (Probabilidad(0)) {}  */ 
+        /* PrimerEquipo.JugadoresActivos.get(id)    */ 
+        
+        switch(cases)
+        {
+            case 0:
+                System.out.println("RIP esto nunca deberia ocurrir");
+                break;
+                
+             // delantero   
+            case 1:
+                // Probabilidad de que tire
+                if (Probabilidad(80))
+                {
+                    // probabilidad de malla
+                    if (Probabilidad(PrimerEquipo.JugadoresActivos.get(id).skilloff-40)) 
+                    {
+                        // probabilidad de gol
+                        if (Probabilidad(0)) {}
+                        else {}
+                        
+                    }
+                    // probabilidad de palo
+                    else if (Probabilidad(5))
+                    {
+                        // rebota y jugador recibe la pelota denuevo
+                        if (Probabilidad(30))
+                        {
+                            
+                        }
+                        // sale del campo
+                        else if (Probabilidad(65)) 
+                        {
+                            
+                        } 
+                        // gol de palo
+                        else 
+                        {
+                            
+                        }                         
+                    }
+                    
+                    // no malla ni palo, saque de portero
+                    else 
+                    {
+                        
+                    }   
+                }
+                // pasa (deberia ser else if( 70%) con un else de falta)
+                else 
+                {
+                    // si el pase fue bueno
+                    if (Probabilidad(50)) 
+                    {
+                        
+                    }
+                    // si fue fuera de campo
+                    else 
+                    {
+                        
+                    }
+                }
+                
+                break;  
+                
+            // centro
+            case 2: 
+                // probabilidad de pase hacia un delantero
+                if (Probabilidad(85)) 
+                {
+                    
+                }
+                // probablidad que le quiten la pelota             
+                else if (Probabilidad(50)) 
+                {
+                    // aqui va probabilidad de falta
+                    
+                    
+                }
+                // proabilidad que de un pase a un centro
+                else
+                {
+                    
+                }
+                break;  
+                
+             // defensa   
+            case 3: 
+                // probabilidad de pase hacia un centro
+                if (Probabilidad(85)) 
+                {
+                    
+                }                
+                // proabilidad que de un pase a un defensa
+                else
+                {
+                    
+                }
+                
+                
+                break;
+                
+            // potero    
+            case 4: 
+                // da pase a defensa
+                break;
+            
+                       
+        }
+        
+        
+        
+        
+        
+    } // accion de equipo 1
+    public void action2() {
+        
+        // determinar cual es el id del jugador con la pelota
+        int id = 0;
+        for (int a = 0; a < SegundoEquipo.JugadoresActivos.size(); a++)
+        {
+            if (SegundoEquipo.JugadoresActivos.get(a).HasBall = true)
+            {
+                id = a;
+            }
+        }
+        
+        // ahora determinar su rol
+        
+        int cases = 0;
+        if (id == 0){System.out.println("RIP, esto nunca deberia ocurrir");}
+        else if (SegundoEquipo.JugadoresActivos.get(id).posicion.equals("delantero"))
+        {
+            cases = 1;
+        }
+        else if (SegundoEquipo.JugadoresActivos.get(id).posicion.equals("centro"))
+        {
+            cases = 2;
+        }
+        else if (SegundoEquipo.JugadoresActivos.get(id).posicion.equals("defensa"))
+        {
+            cases = 3;
+        }
+        else if (SegundoEquipo.JugadoresActivos.get(id).posicion.equals("portero"))
+        {
+            cases = 4;
+        }
+        
+        
+        
+        
+        // ahora empieza la accion, usando su rol en switch
+        
+        /* if (Probabilidad(0)) {}  */ 
+        /* SegundoEquipo.JugadoresActivos.get(id)    */ 
+        
+        switch(cases)
+        {
+            case 0:
+                System.out.println("RIP esto nunca deberia ocurrir");
+                break;
+                
+             // delantero   
+            case 1:
+                // Probabilidad de que tire
+                if (Probabilidad(80))
+                {
+                    // probabilidad de malla
+                    if (Probabilidad(SegundoEquipo.JugadoresActivos.get(id).skilloff-40)) 
+                    {
+                        
+                        int pro = SegundoEquipo.JugadoresActivos.get(id).skilloff - 
+                                (PrimerEquipo.JugadorEquipo("portero").skillpor-70);
+                        // probabilidad de gol
+                        if (Probabilidad(pro)) 
+                        {
+                            SegundoEquipo.Puntuacion++;
+                            info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(id),null,0));
+                            SegundoEquipo.JugadoresActivos.get(id).HasBall = false;
+                            PrimerEquipo.JugadorEquipo("portero").HasBall = true;
+                        }
+                        // lo agarro el portero
+                        else 
+                        {
+                            
+                        }
+                        
+                    }
+                    // probabilidad de palo
+                    else if (Probabilidad(5))
+                    {
+                        // rebota y jugador recibe la pelota denuevo
+                        if (Probabilidad(30))
+                        {
+                            
+                        }
+                        // sale del campo
+                        else if (Probabilidad(65)) 
+                        {
+                            
+                        } 
+                        // gol de palo
+                        else 
+                        {
+                            
+                        }                         
+                    }
+                    
+                    // no malla ni palo, saque de portero
+                    else 
+                    {
+                        
+                    }   
+                }
+                // pasa (deberia ser else if( 70%) con un else de falta)
+                else 
+                {
+                    // si el pase fue bueno
+                    if (Probabilidad(50)) 
+                    {
+                        
+                    }
+                    // si fue fuera de campo
+                    else 
+                    {
+                        
+                    }
+                }
+                
+                break;  
+                
+            // centro
+            case 2: 
+                // probabilidad de pase hacia un delantero
+                if (Probabilidad(85)) 
+                {
+                    
+                }
+                // probablidad que le quiten la pelota             
+                else if (Probabilidad(50)) 
+                {
+                    // aqui va probabilidad de falta
+                    
+                    
+                }
+                // proabilidad que de un pase a un centro
+                else
+                {
+                    
+                }
+                break;  
+                
+             // defensa   
+            case 3: 
+                // probabilidad de pase hacia un centro
+                if (Probabilidad(85)) 
+                {
+                    
+                }                
+                // proabilidad que de un pase a un defensa
+                else
+                {
+                    
+                }
+                
+                
+                break;
+                
+            // potero    
+            case 4: 
+                // da pase a defensa
+                break;
+            
+                       
+        }
+        
+        
+        
+        
+        
+    } // accion de equipo 2
    
     public String StrParaLog(player uno, player dos, int x) {
         /*
-        * x = 1 gol
-        * x = 2 pase
-        * x = 3 falta leve
-        * x = 4 falta grave (tarjeta roja)
-        * x = 5 corner
-        * x = 6 saque (de medio)
-        * x = 7 inicio
-        * x = 8 lo atrapo potero
-        * x = 9 fallo el gol
-        * x = 10 corner
-        * x = 11 palo y recupera la pelota el tirador
-        * x = 12 palo y sale para afuera (saque de portero)
-        * x = 13 palo y gol
-        * x = 14 tira y sale de campo
-        * x = 15 eliminacion de jugador del campo por tarjeta roja (1)
-        * x = 16 no hizo nada
-        * x = 17 gg (0)
-        * x = 18 inicio
-        * x = 19 recibe la pelota (despues de inicio)
-        * x = 20 sale el jugador por ser herido (1)
-        * x = 21 se cambia un jugador por otro (1) // ej: sale jose por herida y es reemplazado!
-        * x = 22 le hicieron falta y ahora saca un centro   // ej: le dieron a jose y ahora saca el centro mauro
-        * x = 23 literalmente no hacer nada (1) // ej. el esta dribleando y mantiene la pelota
-        * x = 24 sale jugador por tarjeta roja
+        x = 0   gol (1)
+        
+       
         */
+        switch (x)
+        {
+            
+            case 0:
+                String re = uno.nombre + "recibe la pelota, tira, y.... GOOOOL!!!";
+                return re;
+            case 1:
+            case 2:
+            case 3: 
+            case 4:
+            case 5: 
+            case 6:
+            case 7: 
+            case 8: 
+                
+        }
         
         
         
-        return "accion";
+        return uno.nombre + " " + x;
     } // me tira el string que dice "el player 1 hizo algo player 2
     
     public boolean Probabilidad(int porcentaje) {
@@ -511,7 +870,7 @@ class juego {
         return null;
     } // Metodo que devuelve un jugador del equipo qu no tiene la pelota
     
-    public player JugadorEquipo (equipo equipo1, equipo equipo2, int x) {
+    public player JugadorEquipoConPelota (equipo equipo1, equipo equipo2, int x) {
         
         player rol;
         if (equipo1.HasBall() == null)
@@ -634,13 +993,13 @@ class juego {
                 {
                     if (inicio)
                     {
-                        info.AddLog(StrParaLog(null,null,18));
+                        info.AddLog("Comienza la partida!");
+                        inicio = false;
                         inicio();  
                     }
                     else if (!gg)
                     {
                     recorrido(PrimerEquipo, SegundoEquipo);
-                    System.out.println(seg);
                     }
                     else {System.out.println("se acabo el juego!");}
                 }
@@ -651,6 +1010,8 @@ class juego {
         info.minActual = 90;
         info.segActual = 00;
         System.out.println("se acabo el juego!");
+        System.out.println("puntuacion:" + PrimerEquipo.Puntuacion +" "+SegundoEquipo.Puntuacion);
+        info.log.close();
     } // Metodo timer que lleva el tiempo del juego
     
     public void inicio(){
@@ -662,14 +1023,16 @@ class juego {
             player s = PrimerEquipo.JugadorEquipo("centro");
             info.AddLog(StrParaLog(s,null,19));
             s.HasBall = true;
-            PrimerEquipo.Reemplazoplayer(s);
+            PrimerEquipo.Reemplazoplayer(s);           
+            info.AddLog(StrParaLog(s,null,6));
         }
         else 
         {
             player s = SegundoEquipo.JugadorEquipo("centro");
             info.AddLog(StrParaLog(s,null,19));
             s.HasBall = true;
-            SegundoEquipo.Reemplazoplayer(s);
+            SegundoEquipo.Reemplazoplayer(s);            
+            info.AddLog(StrParaLog(s,null,6));
         }
     } // el primer saque
         
@@ -702,7 +1065,7 @@ class player {
         skilloff = pskilloff;
         skilldri= pskilldri;
         skilldef = pskilldef;
-        
+        nombre = pnombre;
         skillpor = pskillpor;
         
     } // Metodo constructor de player
@@ -728,9 +1091,20 @@ class equipo {
     }
     
     public player JugadorEquipo (String posicion){
-    
+          List<player> sss = JugadoresActivos;
+          Collections.shuffle(sss);
+        for (int s = 0; s< sss.size(); s++)
+        {
+            if (sss.get(s).posicion.equals(posicion))
+            {
+                return sss.get(s);
+            }
+            
         
-    return null;
+        }
+        System.out.println("RIP");
+        return sss.get(3);
+    
     } // me devuelve un jugador de la posicion de jugadoresactivos (INCOMPLETO)
     
     public void CrearEquipoActivo(int x) {
@@ -886,31 +1260,45 @@ class equipo {
     	return null;  
     } // Metodo que cambia el jugador por uno de la banca
     
-    public player JugadorPosicion (player x) {
+    public int JugadorEquipo2 (String posicion, int id) {
         
-        for (int i = 0; i < JugadoresActivos.size(); i++)
+        
+        List<player> sss = JugadoresActivos;
+        Collections.shuffle(sss);
+        for (int s = 0; s< sss.size(); s++)
         {
-            player k = JugadoresActivos.get(i);
-            if (k.id == x.id)
+            if (sss.get(s).posicion.equals(posicion))
             {
-                for (int j = 0; j < JugadoresBanca.size(); j++)
+                if (sss.get(s).id != id)
                 {
-                    player l = JugadoresBanca.get(j);
-                    if (x.posicion.equals(l.posicion))
-                    {
-                        return l;
-                    }
-                    else
-                    {
-                    }
+                    return sss.get(s).id;
                 }
             }
-            else
-            {
-            }    
+            
+        
         }
-        return null;    
-    }
+        System.out.println("RIP");
+        
+        return 1;
+        
+    } // me devuelve el id del jugador del equipo con la posicion y tomando en cuenta que no es el mismo del id otorgado
+   
+    public int IndexDeJugador (int id)
+    {
+        for (int i = 0; i < JugadoresActivos.size(); i++)
+        {
+            if (JugadoresActivos)
+         
+            
+            
+            
+        }
+     
+        
+        return 3;
+            
+    
+    
 }
 
 
@@ -920,18 +1308,19 @@ class informacion {
     int kk;
     int minActual;
     int segActual;
-    PrintWriter log;
+    PrintWriter log = new PrintWriter("log.txt");
+    
     
     public informacion (int id) throws IOException {
         kk=id;
-        String dir1 = "C:\\Users\\Hector Lopez\\Desktop\\s\\log.txt";
-        FileWriter fw1 = new FileWriter(dir1, true);
-        BufferedWriter bw1 = new BufferedWriter(fw1);
-        log = new PrintWriter(bw1); // log de eventos
+        log.println("HEY SUP BITCHES");
+        
+        
  
     }
     
     public void AddLog(String accion) {
+        System.out.println("["+minActual+":"+segActual+ "] -> " + accion);
         log.println("["+minActual+":"+segActual+ "] -> " + accion);
         // 
     }
