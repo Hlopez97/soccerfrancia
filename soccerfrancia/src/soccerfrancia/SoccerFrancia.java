@@ -940,7 +940,7 @@ class equipo
         
         int index = IndexDeJugador(p);
         String pos = JugadoresActivos.get(index).posicion;
-        System.out.println(pos);
+        
         
         while (JugadoresActivos.get(index).HasBall)
         {
