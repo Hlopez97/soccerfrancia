@@ -197,9 +197,13 @@ class juego
             {
                 info.AddLog("Gano " + PrimerEquipo.enombre);
             }
-            else 
+            else if (PrimerEquipo.Puntuacion < SegundoEquipo.Puntuacion)
             {
                 info.AddLog("Gano " + SegundoEquipo.enombre);
+            }
+            else 
+            {
+                info.AddLog("Empate!");
             }
         }
         else if (!gg)
@@ -262,8 +266,147 @@ class juego
         /* SegundoEquipo   */ 
         
         index = A.IndexDeJugador(idd);
+        
+        // CASOS ESPECIALES, ANTES DEL SWITCH 
+       // CAMBIO
+        if (A.Cambios < 3 && B.Cambios < 3)
+        {
+            if (info.minActual > 60)
+            {
+                if (Probabilidad(info.minActual-60))
+                {
+                    cases = -1;
+                
+                }
+            }
+        }
+        
+        // END CAMBIO
+        
+        // CORNER
+        
+        if (A.isCorner)
+        {
+            A.isCorner = false;
+            // si el corner lo recibe el def del otro equipo 60
+           if (Probabilidad(60))
+           {
+               // el defensa la ba a botar
+               // probabilidad de que el pase es bueno 50
+               if (Probabilidad(50))
+               {
+                   int indez = B.IndexDeJugador(B.JugadorEquipo("defensa"));
+                   int indezz = B.IndexDeJugador(B.JugadorEquipo("centro"));
+                   index = A.IndexDeJugador(idd);
+                   A.JugadoresActivos.get(index).HasBall = false;
+                   B.JugadoresActivos.get(indezz).HasBall = true;
+                   info.AddLog(StrParaLog(A.JugadoresActivos.get(index),B.JugadoresActivos.get(indez),12) 
+                           + " que immedeatamente la bota! y es recibido por " + B.JugadoresActivos.get(indezz).nombre);
+                   
+                   
+               }
+               // probabilidad que salga del campo
+               else if (Probabilidad(70))
+               {
+                   int indez = B.IndexDeJugador(B.JugadorEquipo("defensa"));
+                   int indezz = A.IndexDeJugador(A.JugadorEquipo("centro"));
+                   index = A.IndexDeJugador(idd);
+                   A.JugadoresActivos.get(index).HasBall = false;
+                   A.JugadoresActivos.get(indezz).HasBall = true;
+                   info.AddLog(StrParaLog(A.JugadoresActivos.get(index),B.JugadoresActivos.get(indez),12) 
+                           + " que immedeatamente la bota! pero sale del campo, recibe la pelota " +  A.JugadoresActivos.get(indezz).nombre);
+                   
+                   
+                   
+               }
+               // si un centro del otro equipo lo intercepta
+               else
+               {
+                   int indez = B.IndexDeJugador(B.JugadorEquipo("defensa"));
+                   int indezz = A.IndexDeJugador(A.JugadorEquipo("centro"));
+                   index = A.IndexDeJugador(idd);
+                   A.JugadoresActivos.get(index).HasBall = false;
+                   A.JugadoresActivos.get(indezz).HasBall = true;
+                   info.AddLog(StrParaLog(A.JugadoresActivos.get(index),B.JugadoresActivos.get(indez),12) 
+                           + " que immedeatamente la bota! pero el pase lo intercepta" +  A.JugadoresActivos.get(indezz).nombre);
+                   
+               }
+               
+               
+           }
+           // si el corner lo recibe un delantero y tira
+           else 
+           {
+               // probabilidad de que falla, bola a portero
+               if (Probabilidad(60))
+               {
+                   
+                   int indez = B.IndexDeJugador(B.JugadorEquipo("portero"));
+                   int indezz = A.IndexDeJugador(A.JugadorEquipo("delantero"));
+                   index = A.IndexDeJugador(idd);
+                   A.JugadoresActivos.get(index).HasBall = false;
+                   B.JugadoresActivos.get(indez).HasBall = true;
+                   info.AddLog(StrParaLog(A.JugadoresActivos.get(index),A.JugadoresActivos.get(indezz),15));
+                   
+                   
+                   
+               }              
+               // probabilidad que el portero lo agarre
+               else if (Probabilidad(50))
+               {
+                   int indez = B.IndexDeJugador(B.JugadorEquipo("portero"));
+                   int indezz = A.IndexDeJugador(A.JugadorEquipo("delantero"));
+                   index = A.IndexDeJugador(idd);
+                   A.JugadoresActivos.get(index).HasBall = false;
+                   B.JugadoresActivos.get(indez).HasBall = true;
+                   info.AddLog(StrParaLog(A.JugadoresActivos.get(index),A.JugadoresActivos.get(indezz),14));
+                   
+                   
+               }              
+               // probabilidad de gol
+               else 
+               {
+                   int indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
+                   int indezz = A.IndexDeJugador(A.JugadorEquipo("delantero"));
+                   index = A.IndexDeJugador(idd);
+                   A.JugadoresActivos.get(index).HasBall = false;
+                   B.JugadoresActivos.get(indez).HasBall = true;
+                   info.AddLog(StrParaLog(A.JugadoresActivos.get(index),A.JugadoresActivos.get(indezz),13));
+                   
+               }
+           }
+        }
+         // END CORNER
+        
+        
+        
+        
+        
+        // END de casos especiales
+        
+         
+        
+        
+        else {
+        
+        
+        
         switch(cases)
         {
+            case -1: 
+                if (A.Cambios <3) 
+                    {
+                        List<String> p = new ArrayList();
+                        p = A.CambioDePlayer(99);
+                        info.log.println(p.get(0)+" es intercambiado por " + p.get(1));
+                    }
+                    else if (B.Cambios <3)
+                    {
+                        List<String> p = new ArrayList();
+                        p = B.CambioDePlayer(99);
+                        info.log.println(p.get(0)+" es intercambiado por " + p.get(1));
+                    }
+                    break;
             case 0:
                 System.out.println("RIP esto nunca deberia ocurrir");
                 break;
@@ -279,23 +422,23 @@ class juego
                     {
                         int s = B.JugadorEquipo("portero");
                         int sdd = B.IndexDeJugador(s);
-                        int por = B.JugadoresActivos.get(sdd).skillpor-70;
+                        int por = B.JugadoresActivos.get(sdd).skillpor-60;
                         if (por < 0 ){  por = 0; }
                         int pro = A.JugadoresActivos.get(index).skilloff - por;
                         
-                        //Probabilidad de gol
+                        //Probabilidad de gol pro
                         if (Probabilidad(pro))
                         {
                             A.Puntuacion++;
-                            int indez = B.IndexDeJugador(B.JugadorEquipo("portero"));
+                            int indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
                             index = A.IndexDeJugador(idd);
                             A.JugadoresActivos.get(index).HasBall = false;
                             B.JugadoresActivos.get(indez).HasBall = true;
                             index = A.IndexDeJugador(idd);
                             info.AddLog(StrParaLog(A.JugadoresActivos.get(index),null,0));
                         }
-                        // lo agarro el portero
-                        else 
+                        // lo agarro el portero por + 20
+                        else if (Probabilidad(por + 20))
                         {
                             int indez = B.IndexDeJugador(B.JugadorEquipo("portero"));
                             index = A.IndexDeJugador(idd);
@@ -304,6 +447,13 @@ class juego
                             info.AddLog(StrParaLog(A.JugadoresActivos.get(index),B.JugadoresActivos.get(indez),9));
                         }
                         
+                        // el portero le da, corner
+                        else 
+                        {
+                            index = A.IndexDeJugador(idd);
+                            A.isCorner = true;
+                            info.AddLog(StrParaLog(A.JugadoresActivos.get(index),null,11));
+                        }
                         
                     }
                     // probabilidad de palo
@@ -322,7 +472,7 @@ class juego
                         else 
                         {
                             A.Puntuacion++;
-                            int indez = B.IndexDeJugador(B.JugadorEquipo("portero"));
+                            int indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
                             index = A.IndexDeJugador(idd);
                             A.JugadoresActivos.get(index).HasBall = false;
                             // averiguar si despues de gol es saque de centro o portero 
@@ -471,7 +621,8 @@ class juego
                     
                 }
                 break;               
-        }  
+        } 
+        }
     } // una accion
     
     public void inicio(){
@@ -524,6 +675,19 @@ class juego
         
         x = 9 tira pero el portero lo agarra
         x = 10 el portero saca pero el centro del otro equipo recupera
+        
+        corners
+        
+        x = 11 el portero le da, es corner (1)
+        x = 12 el del saca y el def lo bota, lo recibe el centro
+
+        
+        
+        x = 13 el del saca, del recibe y gol
+        x = 14 el del saca, del recibe y portero atrapa
+        x = 15 el del saca, del recibe y falla 
+        
+       
         */
         String re;
         switch (x)
@@ -562,6 +726,21 @@ class juego
                 return re;
             case 10:
                 re = uno.nombre + " saca bien lejos, pero... " + dos.nombre + " del otro equipo, lo recupera!";
+                return re;               
+            case 11:
+                re = uno.nombre + " recibe la pelota, tira y... el portero con mucho esfuerzo le desvia el disparo, es corner!";
+                return re;               
+            case 12:
+                re = uno.nombre + " le toca sacar de corner, este intenta pasar hacia el centro... pero es interceptado por " + dos.nombre;
+                return re;    
+            case 13: 
+                re = uno.nombre + " saca de corner, " + dos.nombre + " le da con la cabeza! y.. GOOOOOL!!!!!!";
+                return re;
+            case 14:
+                re = uno.nombre + " saca de corner, " + dos.nombre + " le da con la cabeza! y.. el portero lo agarra!";
+                return re;
+            case 15:
+                re = uno.nombre + " saca de corner, " + dos.nombre + " le da con la cabeza! y.. falla, bola a portero";
                 return re;
             default: return "rip nunca deberia ocurrir";
                 
@@ -577,11 +756,12 @@ class juego
 //
 class player
 {
-    int id;
+    int id;   
     String nombre;
     String posicion;
     int skilloff; int skilldri; int skilldef;  int skillpor;
     boolean HasBall = false; // false hasta que empieza el juego
+    
     
     public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskillpor) {
         // aqui se setean los valores iniciales, es el constructor
@@ -600,12 +780,13 @@ class player
 //
 class equipo 
 {
+    boolean isCorner = false; // para dar corners
     int Localid;
     int Puntuacion = 0;
     List<player> Jugadores = new ArrayList(); // lista de 20 jugadores
     List<player> JugadoresActivos = new ArrayList(); // jugadores activos (11 jugadores)
     List<player> JugadoresBanca = new ArrayList(); // jugadores en banca (9 jugadores)
-    int cambios = 0;
+    int Cambios = 0;
     String enombre;
     
     public equipo (int id, String nombre) {
@@ -614,10 +795,11 @@ class equipo
     }
     
     public void start() {
-        CrearEquipoActivo(Localid);  
+        CrearEquipoActivo();
+        CrearBanca();
     }
     
-    public void CrearEquipoActivo(int x) {
+    public void CrearEquipoActivo() {
         
         List<player> RandomList = Jugadores;
         Collections.shuffle(RandomList);
@@ -662,6 +844,22 @@ class equipo
          
         
     } // Metodo que forma los grupos de jugadores que van a participar a partir de su equipo
+    
+    
+    public void CrearBanca() {
+        int s = 0;
+        for (int a = 0; a < 20; a++)
+        {
+            if (!JugadoresActivos.contains(Jugadores.get(a)))
+            {
+                JugadoresBanca.add(Jugadores.get(a));
+                
+            }
+            
+        }
+        Collections.shuffle(JugadoresBanca);
+        
+    } // crea la banca
    
     public boolean HasBall() {
         for (int a = 0; a< JugadoresActivos.size(); a++)
@@ -721,6 +919,65 @@ class equipo
         return 1;
     
     } // me devuelve el id del jugador de la posicion como parametro (INCOMPLETO)
+    
+    public List<String> CambioDePlayer (int id) {
+        int p = 0;
+        // si el jugador es aleatorio
+        if (id == 99)
+        {
+            int randomNum = ThreadLocalRandom.current().nextInt(0,11);
+            p = JugadoresActivos.get(randomNum).id;
+        }
+        // sino
+        else 
+        {
+            p = id;
+        }
+        
+        int index = IndexDeJugador(p);
+        String pos = JugadoresActivos.get(index).posicion;
+        System.out.println(pos);
+        
+        while (JugadoresActivos.get(index).HasBall)
+        {
+            int randomNum = ThreadLocalRandom.current().nextInt(0,11);
+            p = JugadoresActivos.get(randomNum).id;
+            index = IndexDeJugador(p);
+        }
+        
+        int id2 = 0;
+        // determinar id de jugador con la misma posicion en jugador banca
+        for (int a = 0; a < JugadoresBanca.size(); a++)
+        {
+            if (JugadoresBanca.get(a).posicion.equals(pos))
+            {
+                id2 = JugadoresBanca.get(a).id;
+                
+            }
+        }
+        
+        index = IndexDeJugador(p);
+        String nombre1 = JugadoresActivos.get(index).nombre;
+        JugadoresBanca.add(JugadoresActivos.get(index));
+        JugadoresActivos.remove(index); 
+        
+        int index2 = 0;      
+        for (int a = 0; a < JugadoresBanca.size(); a++)
+        {
+            if (JugadoresBanca.get(a).id == id2)
+            {
+                index2 = a;
+                
+            }
+        }
+        String nombre2 = JugadoresBanca.get(index2).nombre;
+        JugadoresActivos.add(JugadoresBanca.get(index2));
+        JugadoresBanca.remove(index2);
+        List<String> list = new ArrayList();
+        list.add(nombre1);
+        list.add(nombre2);
+        return list;
+    } // saca de activos y mete en banca y viceversa, id 99 = random
 }
 //
 
