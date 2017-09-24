@@ -1,95 +1,95 @@
 HEY SUP BITCHES
 El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda equipo1 le toca sacar.
 [0:0] -> Blucas recibe la pelota.
-[1:0] -> Blucas da un pase, pero zBlucas le quita la pelota.
-[2:0] -> zBlucas da un pase a zAlucas
-[3:0] -> zAlucas recibe la pelota, tira, y.... GOOOOL!!!
-[4:0] -> Blucas da un pase, pero zBlucas le quita la pelota.
-[5:0] -> zBlucas da un pase a zBlucas
-[6:0] -> zBlucas da un pase a zAlucas
-[7:0] -> zAlucas recibe la pelota, tira, y.... GOOOOL!!!
-[8:0] -> Blucas da un pase a Blucas
-[9:0] -> Blucas da un pase a Alucas
-[10:0] -> Alucas recibe la pelota, tira y....zDlucas lo agarra.
-[11:0] -> zDlucas da un pase a zClucas
-[12:0] -> zClucas da un pase a zBlucas
-[13:0] -> zBlucas da un pase a zAlucas
-[14:0] -> zAlucas da un pase a zAlucas
-[15:0] -> zAlucas recibe la pelota, tira, y.... GOOOOL!!!
-[16:0] -> Blucas da un pase a Alucas
-[17:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
-[18:0] -> zDlucas da un pase a zClucas
-[19:0] -> zClucas da un pase a zBlucas
-[20:0] -> zBlucas da un pase, pero Blucas le quita la pelota.
-[21:0] -> Blucas da un pase a Blucas
+[1:0] -> Blucas da un pase a Alucas
+[2:0] -> Alucas da un pase a Alucas
+[3:0] -> Alucas recibe la pelota, tira y... choca con el palo!... y... GOOOOL!!! 
+[4:0] -> zBlucas da un pase a zAlucas
+[5:0] -> zAlucas recibe la pelota, tira... pero no entro a malla.
+[6:0] -> Dlucas da un pase a Clucas
+[7:0] -> Clucas da un pase a Blucas
+[8:0] -> Blucas da un pase a Alucas
+[9:0] -> Alucas recibe la pelota, tira y... choca con el palo!... y... GOOOOL!!! 
+[10:0] -> zBlucas da un pase a zBlucas
+[11:0] -> zBlucas da un pase a zAlucas
+[12:0] -> zAlucas pasa pero... es fuera de campo! ahora a Dlucas del otro equipo le toca sacar.
+[13:0] -> Dlucas da un pase a Clucas
+[14:0] -> Clucas da un pase a Blucas
+[15:0] -> Blucas da un pase a Alucas
+[16:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
+[17:0] -> zDlucas da un pase a zBlucas
+[18:0] -> zBlucas da un pase a zAlucas
+[19:0] -> zAlucas recibe la pelota, tira... pero no entro a malla.
+[20:0] -> Dlucas da un pase a Clucas
+[21:0] -> Clucas da un pase a Blucas
 [22:0] -> Blucas da un pase a Alucas
 [23:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
-[24:0] -> zDlucas saca bien lejos, pero... Blucas del otro equipo, lo recupera!
-[25:0] -> Blucas da un pase a Alucas
-[26:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
-[27:0] -> zDlucas da un pase a zClucas
-[28:0] -> zClucas da un pase a zBlucas
-[29:0] -> zBlucas da un pase, pero Blucas le quita la pelota.
-[30:0] -> Blucas da un pase a Alucas
-[31:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
-[32:0] -> zDlucas da un pase a zClucas
-[33:0] -> zClucas da un pase a zBlucas
-[34:0] -> zBlucas da un pase a zAlucas
-[35:0] -> zAlucas recibe la pelota, tira y... choca con el palo!... y... GOOOOL!!! 
-[36:0] -> Blucas da un pase a Alucas
-[37:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
-[38:0] -> zDlucas da un pase a zClucas
-[39:0] -> zClucas da un pase a zClucas
-[40:0] -> zClucas da un pase a zClucas
-[41:0] -> zClucas da un pase a zBlucas
-[42:0] -> zBlucas da un pase a zAlucas
-[43:0] -> zAlucas da un pase a zAlucas
-[44:0] -> zAlucas da un pase a zAlucas
+[24:0] -> zDlucas da un pase a zClucas
+[25:0] -> zClucas da un pase a zBlucas
+[26:0] -> zBlucas da un pase a zAlucas
+[27:0] -> zAlucas recibe la pelota, tira y... el portero con mucho esfuerzo le desvia el disparo, es corner!
+[28:0] -> zAlucas le toca sacar de corner, este intenta pasar hacia el centro... pero es interceptado por Clucas que immedeatamente la bota! pero el pase lo interceptazBlucas
+[29:0] -> zBlucas da un pase a zAlucas
+[30:0] -> zAlucas recibe la pelota, tira y... choca con el palo!... y... GOOOOL!!! 
+[31:0] -> Blucas da un pase a Blucas
+[32:0] -> Blucas da un pase a Alucas
+[33:0] -> Alucas recibe la pelota, tira y... choca con el palo!... pero sale hacia afuera. 
+[34:0] -> zDlucas da un pase a zBlucas
+[35:0] -> zBlucas da un pase a zAlucas
+[36:0] -> zAlucas recibe la pelota, tira... pero no entro a malla.
+[37:0] -> Dlucas da un pase a Clucas
+[38:0] -> Clucas da un pase a Blucas
+[39:0] -> Blucas da un pase a Alucas
+[40:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
+[41:0] -> zDlucas da un pase a zClucas
+[42:0] -> zClucas da un pase a zBlucas
+[43:0] -> zBlucas da un pase a zAlucas
+[44:0] -> zAlucas recibe la pelota, tira... pero no entro a malla.
 [45:0] -> Medio Termino
-[46:0] -> zAlucas recibe la pelota, tira y... choca con el palo!... y... GOOOOL!!! 
+[46:0] -> Dlucas da un pase a Blucas
 [47:0] -> Blucas da un pase, pero zBlucas le quita la pelota.
 [48:0] -> zBlucas da un pase a zAlucas
-[49:0] -> zAlucas recibe la pelota, tira... pero no entro a malla.
-[50:0] -> Dlucas saca bien lejos, pero... zBlucas del otro equipo, lo recupera!
-[51:0] -> zBlucas da un pase a zBlucas
-[52:0] -> zBlucas da un pase, pero Blucas le quita la pelota.
-[53:0] -> Blucas da un pase a Alucas
-[54:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
-[55:0] -> zDlucas da un pase a zClucas
-[56:0] -> zClucas da un pase a zClucas
-[57:0] -> zClucas da un pase a zClucas
-[58:0] -> zClucas da un pase a zBlucas
-[59:0] -> zBlucas da un pase a zAlucas
-[60:0] -> zAlucas recibe la pelota, tira y... choca con el palo!... pero sale hacia afuera. 
-[61:0] -> Dlucas da un pase a Clucas
-[62:0] -> Clucas da un pase a Blucas
-[63:0] -> Blucas da un pase a Alucas
-[64:0] -> Alucas recibe la pelota, tira y... el portero con mucho esfuerzo le desvia el disparo, es corner!
-[65:0] -> Alucas saca de corner, Alucas le da con la cabeza! y.. falla, bola a portero
-[66:0] -> zDlucas da un pase a zClucas
-[67:0] -> zClucas da un pase a zBlucas
-[68:0] -> zBlucas da un pase a zAlucas
-zClucas es intercambiado por zClucas
-[70:0] -> zAlucas recibe la pelota, tira... pero no entro a malla.
-[71:0] -> Dlucas da un pase a Clucas
-Alucas es intercambiado por Alucas
-Dlucas es intercambiado por Dlucas
-[74:0] -> Clucas da un pase a Blucas
-[75:0] -> Blucas da un pase a Alucas
-[76:0] -> Alucas pasa pero... es fuera de campo! ahora a zDlucas del otro equipo le toca sacar.
-[77:0] -> zDlucas da un pase a zBlucas
-zDlucas es intercambiado por zDlucas
-zClucas es intercambiado por zClucas
-[80:0] -> zBlucas da un pase a zAlucas
-[81:0] -> zAlucas recibe la pelota, tira y... choca con el palo!... pero sale hacia afuera. 
-[82:0] -> Dlucas saca bien lejos, pero... zBlucas del otro equipo, lo recupera!
-zClucas es intercambiado por zClucas
+[49:0] -> zAlucas pasa pero... es fuera de campo! ahora a Dlucas del otro equipo le toca sacar.
+[50:0] -> Dlucas da un pase a Clucas
+[51:0] -> Clucas da un pase a Blucas
+[52:0] -> Blucas da un pase a Alucas
+[53:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
+[54:0] -> zDlucas da un pase a zClucas
+[55:0] -> zClucas da un pase a zBlucas
+[56:0] -> zBlucas da un pase a zAlucas
+[57:0] -> zAlucas recibe la pelota, tira... pero no entro a malla.
+[58:0] -> Dlucas da un pase a Clucas
+[59:0] -> Clucas da un pase a Blucas
+[60:0] -> Blucas da un pase a Alucas
+[61:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
+[62:0] -> zDlucas da un pase a zClucas
+[63:0] -> zClucas da un pase a zBlucas
+[64:0] -> zBlucas da un pase a zAlucas
+[65:0] -> zAlucas recibe la pelota, tira, y.... GOOOOL!!!
+[66:0] -> Blucas da un pase a Blucas
+[67:0] -> Blucas da un pase a Blucas
+[68:0] -> Blucas da un pase a Alucas
+[69:0] -> Alucas recibe la pelota, tira y....zDlucas lo agarra.
+[70:0] -> zDlucas da un pase a zClucas
+[71:0] -> zClucas da un pase a zBlucas
+[72:0] -> zBlucas da un pase, pero Blucas le quita la pelota.
+[73:0] -> Blucas da un pase a Alucas
+[74:0] -> Alucas pasa pero... es fuera de campo! ahora a zDlucas del otro equipo le toca sacar.
+zBlucas es intercambiado por zBlucas
+[76:0] -> zDlucas saca bien lejos, pero... Blucas del otro equipo, lo recupera!
+[77:0] -> Blucas da un pase a Alucas
+[78:0] -> Alucas da un pase a Alucas
+[79:0] -> Alucas recibe la pelota, tira y... el portero con mucho esfuerzo le desvia el disparo, es corner!
+[80:0] -> Alucas le toca sacar de corner, este intenta pasar hacia el centro... pero es interceptado por zClucas que immedeatamente la bota! pero sale del campo, recibe la pelota Blucas
+[81:0] -> Blucas da un pase a Alucas
+[82:0] -> Alucas recibe la pelota, tira... pero no entro a malla.
+[83:0] -> zDlucas da un pase a zBlucas
 [84:0] -> zBlucas da un pase a zAlucas
-[85:0] -> zAlucas recibe la pelota, tira y... el portero con mucho esfuerzo le desvia el disparo, es corner!
-[86:0] -> zAlucas saca de corner, zAlucas le da con la cabeza! y.. falla, bola a portero
-[87:0] -> Dlucas da un pase a Clucas
+zBlucas es intercambiado por zBlucas
+zBlucas es intercambiado por zBlucas
+[87:0] -> zAlucas recibe la pelota, tira... pero no entro a malla.
+Alucas es intercambiado por Dlucas
 Clucas es intercambiado por Clucas
-Blucas es intercambiado por Blucas
 [90:0] -> Se acabo el juego!
-[90:0] -> la puntuacion final es 0 a 5
-[90:0] -> Gano equipo2
+[90:0] -> la puntuacion final es 2 a 2
+[90:0] -> Empate!
