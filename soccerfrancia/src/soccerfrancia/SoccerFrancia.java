@@ -90,57 +90,57 @@ class juego
     }
     
     public static void setplayers(equipo uno, equipo dos) {
-        uno.Jugadores.add(new player(1,"Alucas","delantero",70,50,20,0));     
-        uno.Jugadores.add(new player(2,"Alucas","delantero",70,50,20,0));
-        uno.Jugadores.add(new player(3,"Alucas","delantero",70,50,20,0));
-        uno.Jugadores.add(new player(4,"Alucas","delantero",70,50,20,0));
-        uno.Jugadores.add(new player(5,"Alucas","delantero",70,50,20,0));
-        uno.Jugadores.add(new player(6,"Alucas","delantero",70,50,20,0));
+        uno.Jugadores.add(new player(1,"Alucas","delantero",70,50,20,0,15));     
+        uno.Jugadores.add(new player(2,"Alucas","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(3,"Alucas","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(4,"Alucas","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(5,"Alucas","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(6,"Alucas","delantero",70,50,20,0,15));
         
-        uno.Jugadores.add(new player(7,"Blucas","centro",70,50,20,0));
-        uno.Jugadores.add(new player(8,"Blucas","centro",70,50,20,0));
-        uno.Jugadores.add(new player(9,"Blucas","centro",70,50,20,0));
-        uno.Jugadores.add(new player(10,"Blucas","centro",70,50,20,0));
-        uno.Jugadores.add(new player(11,"Blucas","centro",70,50,20,0));
-        uno.Jugadores.add(new player(12,"Blucas","centro",70,50,20,0));
+        uno.Jugadores.add(new player(7,"Blucas","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(8,"Blucas","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(9,"Blucas","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(10,"Blucas","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(11,"Blucas","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(12,"Blucas","centro",70,50,20,0,15));
         
-        uno.Jugadores.add(new player(13,"Dlucas","portero",70,50,20,90));
-        uno.Jugadores.add(new player(14,"Dlucas","portero",70,50,20,0));
-        uno.Jugadores.add(new player(15,"Dlucas","portero",70,50,20,0));
+        uno.Jugadores.add(new player(13,"Dlucas","portero",70,50,20,90,15));
+        uno.Jugadores.add(new player(14,"Dlucas","portero",70,50,20,0,15));
+        uno.Jugadores.add(new player(15,"Dlucas","portero",70,50,20,0,15));
         
-        uno.Jugadores.add(new player(16,"Clucas","defensa",70,50,20,0));
-        uno.Jugadores.add(new player(17,"Clucas","defensa",70,50,20,0));
-        uno.Jugadores.add(new player(18,"Clucas","defensa",70,50,20,0));
-        uno.Jugadores.add(new player(19,"Clucas","defensa",70,50,20,0));
-        uno.Jugadores.add(new player(20,"Clucas","defensa",70,50,20,0));
+        uno.Jugadores.add(new player(16,"Clucas","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(17,"Clucas","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(18,"Clucas","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(19,"Clucas","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(20,"Clucas","defensa",70,50,20,0,15));
         
         
         
         // dos
         
-        dos.Jugadores.add(new player(1,"zAlucas","delantero",70,50,20,0));     
-        dos.Jugadores.add(new player(2,"zAlucas","delantero",70,50,20,0));
-        dos.Jugadores.add(new player(3,"zAlucas","delantero",70,50,20,0));
-        dos.Jugadores.add(new player(4,"zAlucas","delantero",70,50,20,0));
-        dos.Jugadores.add(new player(5,"zAlucas","delantero",70,50,20,0));
-        dos.Jugadores.add(new player(6,"zAlucas","delantero",70,50,20,0));
+        dos.Jugadores.add(new player(1,"zAlucas","delantero",70,50,20,0,15));     
+        dos.Jugadores.add(new player(2,"zAlucas","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(3,"zAlucas","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(4,"zAlucas","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(5,"zAlucas","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(6,"zAlucas","delantero",70,50,20,0,15));
         
-        dos.Jugadores.add(new player(7,"zBlucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(8,"zBlucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(9,"zBlucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(10,"zBlucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(11,"zBlucas","centro",70,50,20,0));
-        dos.Jugadores.add(new player(12,"zBlucas","centro",70,50,20,0));
+        dos.Jugadores.add(new player(7,"zBlucas","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(8,"zBlucas","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(9,"zBlucas","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(10,"zBlucas","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(11,"zBlucas","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(12,"zBlucas","centro",70,50,20,0,15));
         
-        dos.Jugadores.add(new player(13,"zDlucas","portero",70,50,20,90));
-        dos.Jugadores.add(new player(14,"zDlucas","portero",70,50,20,80));
-        dos.Jugadores.add(new player(15,"zDlucas","portero",70,50,20,80));
+        dos.Jugadores.add(new player(13,"zDlucas","portero",70,50,20,90,15));
+        dos.Jugadores.add(new player(14,"zDlucas","portero",70,50,20,80,15));
+        dos.Jugadores.add(new player(15,"zDlucas","portero",70,50,20,80,15));
         
-        dos.Jugadores.add(new player(16,"zClucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(17,"zClucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(18,"zClucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(19,"zClucas","defensa",70,50,20,0));
-        dos.Jugadores.add(new player(20,"zClucas","defensa",70,50,20,0));
+        dos.Jugadores.add(new player(16,"zClucas","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(17,"zClucas","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(18,"zClucas","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(19,"zClucas","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(20,"zClucas","defensa",70,50,20,0,15));
         
         
         
@@ -520,10 +520,11 @@ class juego
                 break;               
             // centro    
             case 2: 
-                // probablidad que le quiten la pelota             
-                if (Probabilidad(50)) 
+                // probablidad que le quiten la pelota      
+                int indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
+                if (Probabilidad(B.JugadoresActivos.get(indez).skilldri-30)) 
                 {
-                    int indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
+                    indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
                     index = A.IndexDeJugador(idd);
                     A.JugadoresActivos.get(index).HasBall = false;     
                     B.JugadoresActivos.get(indez).HasBall = true;
@@ -598,7 +599,7 @@ class juego
                 // probabilidad que cuando el portero de un pase, se la quite un centro del otro equipo
                 else if (Probabilidad(20))
                 {
-                int indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
+                indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
                 index = A.IndexDeJugador(idd);
                 A.JugadoresActivos.get(index).HasBall = false;     
                 B.JugadoresActivos.get(indez).HasBall = true;
@@ -761,9 +762,9 @@ class player
     String posicion;
     int skilloff; int skilldri; int skilldef;  int skillpor;
     boolean HasBall = false; // false hasta que empieza el juego
+    int idvisual;
     
-    
-    public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskillpor) {
+    public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskillpor, int pidvisual) {
         // aqui se setean los valores iniciales, es el constructor
         id = pid;
         posicion = pposicion;
@@ -771,7 +772,10 @@ class player
         skilldri= pskilldri;
         skilldef = pskilldef;
         nombre = pnombre;
-        skillpor = pskillpor;}
+        skillpor = pskillpor;
+        idvisual = pidvisual;
+    }
+        
     
 }
 //
