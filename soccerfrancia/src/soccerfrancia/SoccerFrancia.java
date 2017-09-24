@@ -243,7 +243,7 @@ class juego
         //
         int idd = A.JugadoresActivos.get(index).id;
         int cases = 0;
-        if (idd == 0){System.out.println("RIP, esto nunca deberia ocurrir");}
+        if (idd == 0){System.out.println("RIP, esto nunca deberia ocurrir idd=0");}
         else if (A.JugadoresActivos.get(index).posicion.equals("delantero"))
         {
             cases = 1;
@@ -408,7 +408,7 @@ class juego
                     }
                     break;
             case 0:
-                System.out.println("RIP esto nunca deberia ocurrir");
+                System.out.println("RIP esto nunca deberia ocurrir case 0");
                 break;
         
             // delantero   
@@ -742,7 +742,7 @@ class juego
             case 15:
                 re = uno.nombre + " saca de corner, " + dos.nombre + " le da con la cabeza! y.. falla, bola a portero";
                 return re;
-            default: return "rip nunca deberia ocurrir";
+            default: return "rip nunca deberia ocurrir no case, default";
                 
         }
         
@@ -899,7 +899,7 @@ class equipo
             
         
         }
-        System.out.println("RIP");      
+        System.out.println("RIP jugactivos2");      
         return 1;
         
     } 
@@ -915,7 +915,7 @@ class equipo
                 return sss.get(s).id;
             }      
         }
-        System.out.println("RIP");
+        System.out.println("RIP jugequipo");
         return 1;
     
     } // me devuelve el id del jugador de la posicion como parametro (INCOMPLETO)
