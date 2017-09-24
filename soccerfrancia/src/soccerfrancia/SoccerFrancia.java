@@ -60,7 +60,6 @@ public class SoccerFrancia extends Application {
         launch(args); // esto corre el metodo start
         
         // cualquier cosa aqui lo hace despues de correr el metodo start
-        System.out.println("peanuts");
         juego prueba = new juego(1);
         prueba.start();
  
@@ -152,16 +151,18 @@ class juego
         int min; int seg;
         for (min = 0; min <= 89; min++) 
         {
+            
+            
             for (seg = 0; seg <= 59; seg++)
             {
                 info.minActual = min;
                 info.segActual = seg;
                 recorrido();
-                DelaySegundo();
+                DelaySegundo();               
                 if (gg) {break;}
                 
             }
-            if (gg) {break;}
+            if (gg) {break;}           
         }
         if (!gg)
         {
@@ -203,7 +204,9 @@ class juego
         }
         else if (!gg)
         {
-            if (PrimerEquipo.HasBall())
+            if (info.segActual == 0)
+            {
+                if (PrimerEquipo.HasBall())
             {
                 action(PrimerEquipo,SegundoEquipo);
             }
@@ -211,6 +214,8 @@ class juego
             {
                 action(SegundoEquipo,PrimerEquipo);
             }
+            }
+            
         }
         else 
         {
@@ -219,501 +224,6 @@ class juego
         }
        
     } // Metodo que dice que hacer
-    
-    public void action1() {
-        
-        // determinar cual es el id del jugador con la pelota
-        int index = 0;
-        for (int a = 0; a < PrimerEquipo.JugadoresActivos.size(); a++)
-        {
-            if (PrimerEquipo.JugadoresActivos.get(a).HasBall)
-            {
-                index = a;
-            }
-        }
-        
-        //
-        int idd = PrimerEquipo.JugadoresActivos.get(index).id;
-        int cases = 0;
-        if (idd == 0){System.out.println("RIP, esto nunca deberia ocurrir");}
-        else if (PrimerEquipo.JugadoresActivos.get(index).posicion.equals("delantero"))
-        {
-            cases = 1;
-        }
-        else if (PrimerEquipo.JugadoresActivos.get(index).posicion.equals("centro"))
-        {
-            cases = 2;
-        }
-        else if (PrimerEquipo.JugadoresActivos.get(index).posicion.equals("defensa"))
-        {
-            cases = 3;
-        }
-        else if (PrimerEquipo.JugadoresActivos.get(index).posicion.equals("portero"))
-        {
-            cases = 4;
-        }
-        
-        // ahora empieza la accion, usando su rol en switch
-        /* PrimerEquipo      */ 
-        /* SegundoEquipo   */ 
-        
-        switch(cases)
-        {
-            case 0:
-                System.out.println("RIP esto nunca deberia ocurrir");
-                break;
-                
-             // delantero   
-            case 1:
-               // System.out.println(PrimerEquipo.JugadoresActivos.get(sd).id + " delantero id");
-                // Probabilidad de que tire 80
-                if (Probabilidad(0))
-                {
-                    // probabilidad de malla
-                    if (Probabilidad(PrimerEquipo.JugadoresActivos.get(index).skilloff-40)) 
-                    {
-                        int s = SegundoEquipo.JugadorEquipo("portero");
-                        int sdd = SegundoEquipo.IndexDeJugador(s);
-                        int por = SegundoEquipo.JugadoresActivos.get(sdd).skillpor-70;
-                        if (por < 0)
-                        {
-                            por = 0;
-                        }
-                        
-                        int pro = PrimerEquipo.JugadoresActivos.get(index).skilloff - por;
-                        // probabilidad de gol
-                        if (Probabilidad(pro)) 
-                        {
-                           PrimerEquipo.Puntuacion++;
-                           int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("portero")); 
-                           index = PrimerEquipo.IndexDeJugador(idd);
-                           PrimerEquipo.JugadoresActivos.get(index).HasBall = false;                            
-                           // averiguar si despues de gol es saque de centro o portero                                                     
-                           SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                            
-                           info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),null,0));
-                        }
-                        // lo agarro el portero
-                        else 
-                        {
-                          int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("portero"));  
-                          index = PrimerEquipo.IndexDeJugador(idd);
-                          PrimerEquipo.JugadoresActivos.get(index).HasBall = false;                             
-                          SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;                  
-                          
-                          info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),null,1));  
-                        }
-                        
-                    }
-                    // probabilidad de palo
-                    else if (Probabilidad(5))
-                    {
-                        // sale del campo
-                        if (Probabilidad(65)) 
-                        {
-                          int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("portero"));                 
-                          index = PrimerEquipo.IndexDeJugador(idd);
-                          PrimerEquipo.JugadoresActivos.get(index).HasBall = false;                           
-                          SegundoEquipo.JugadoresActivos.get(sd).HasBall = true; 
-                          
-                          info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),null,2));  
-                        } 
-                        // gol de palo
-                        else 
-                        {
-                            PrimerEquipo.Puntuacion++;
-                            int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("portero"));        
-                            index = PrimerEquipo.IndexDeJugador(idd);
-                            PrimerEquipo.JugadoresActivos.get(index).HasBall = false;
-                            // averiguar si despues de gol es saque de centro o portero 
-                            SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                            
-                            info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),null,3));
-                        }                                             
-                    }
-                    
-                    // no malla ni palo, saque de portero
-                    else 
-                    {   int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("portero"));   
-                        index = PrimerEquipo.IndexDeJugador(idd);
-                        PrimerEquipo.JugadoresActivos.get(index).HasBall = false;                          
-                        SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;    
-                        
-                        info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),null,4));
-                    }   
-                }
-                // pasa (deberia ser else if( 70%) con un else de falta)
-                else 
-                {
-                    // si el pase fue bueno 50
-                    if (Probabilidad(50)) 
-                    {
-                        int sd = PrimerEquipo.JugadorEquipo2("delantero",idd);
-                        index = PrimerEquipo.IndexDeJugador(idd);
-                        PrimerEquipo.JugadoresActivos.get(index).HasBall = false;
-                        PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                        
-                        info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),
-                                PrimerEquipo.JugadoresActivos.get(sd),5));
-
-                    }
-                    // si fue fuera de campo
-                    else 
-                    {
-                        int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("defensa"));
-                        index = PrimerEquipo.IndexDeJugador(idd);
-                        PrimerEquipo.JugadoresActivos.get(index).HasBall = false;
-                        SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                         
-                        info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),
-                               SegundoEquipo.JugadoresActivos.get(sd),6));
-                    }
-                }
-                
-                break;  
-                
-            // centro
-            case 2: 
-                // probabilidad de pase hacia un delantero 85
-                if (Probabilidad(100)) 
-                {
-                    
-                    int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("delantero"));           
-                    index = PrimerEquipo.IndexDeJugador(idd);
-                    PrimerEquipo.JugadoresActivos.get(index).HasBall = false;
-                    PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),
-                                PrimerEquipo.JugadoresActivos.get(sd),5));
-                    
-                }
-                // probablidad que le quiten la pelota             
-                else if (Probabilidad(50)) 
-                {
-                    int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("delantero"));
-                    index = PrimerEquipo.IndexDeJugador(idd);
-                    PrimerEquipo.JugadoresActivos.get(index).HasBall = false;     
-                    SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                    info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),
-                                SegundoEquipo.JugadoresActivos.get(sd),6));
-                    
-                    // aqui va probabilidad de falta
-                    
-                    
-                }
-                // proabilidad que de un pase a un centro
-                else
-                {
-                    int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("centro"));
-                    index = PrimerEquipo.IndexDeJugador(idd);
-                    PrimerEquipo.JugadoresActivos.get(index).HasBall = false;
-                    PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                    info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),
-                                PrimerEquipo.JugadoresActivos.get(sd),5));
-                }
-                break;  
-                
-             // defensa   
-            case 3: 
-                // probabilidad de pase hacia un centro
-                if (Probabilidad(85)) 
-                {
-                    int sd = PrimerEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("centro"));
-                    index = PrimerEquipo.IndexDeJugador(idd);
-                    PrimerEquipo.JugadoresActivos.get(index).HasBall = false;
-                    PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                    info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),
-                                PrimerEquipo.JugadoresActivos.get(sd),5));
-                    
-                }                
-                // proabilidad que de un pase a un defensa
-                else
-                {    
-                    int sd = PrimerEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("defensa"));
-                    index = PrimerEquipo.IndexDeJugador(idd);
-                    PrimerEquipo.JugadoresActivos.get(index).HasBall = false;
-                    PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                    info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),
-                                PrimerEquipo.JugadoresActivos.get(sd),5));                    
-                }  
-                break;
-                
-            // potero    
-            case 4:                
-                // da pase a defensa
-                int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("defensa"));
-                index = PrimerEquipo.IndexDeJugador(idd);                
-                PrimerEquipo.JugadoresActivos.get(index).HasBall = false;
-                PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(index),
-                        PrimerEquipo.JugadoresActivos.get(sd),5));
-                break;
-            
-                       
-        }
-        
-        
-        
-        
-        
-    } // accion de equipo 1
-    
-    public void action2() {
-        
-        // determinar cual es el index del jugador con la pelota
-        int index = 0;
-        for (int a = 0; a < SegundoEquipo.JugadoresActivos.size(); a++)
-        {
-            if (SegundoEquipo.JugadoresActivos.get(a).HasBall)
-            {
-                index = a;
-            }
-        }
-        
-        // ahora determinar su rol
-        String pos = SegundoEquipo.JugadoresActivos.get(index).posicion;
-        /*
-        
-        System.out.println(SegundoEquipo.JugadoresActivos.get(index).id + " id");
-        System.out.println("");
-       
-        
-        
-        System.out.println(SegundoEquipo.JugadoresActivos.get(index).posicion);
-        System.out.println("");
-        */
-        int idd = SegundoEquipo.JugadoresActivos.get(index).id;
-        int cases = 0;
-        if (idd == 0){System.out.println("RIP, esto nunca deberia ocurrir");}
-        else if (pos.equals("delantero"))
-        {
-            cases = 1;
-        }
-        else if (pos.equals("centro"))
-        {
-            cases = 2;
-        }
-        else if (pos.equals("defensa"))
-        {
-            cases = 3;
-        }
-        else if (pos.equals("portero"))
-        {
-            cases = 4;
-        }
-        /*System.out.println(cases+ " cases");
-        System.out.println("");*/
-        
-        
-        
-        // ahora empieza la accion, usando su rol en switch
-        
-        /* if (Probabilidad(0)) {}  */ 
-        /* SegundoEquipo.JugadoresActivos.get(id)    */ 
-        
-        switch(cases)
-        {
-            case 0:
-                System.out.println("RIP esto nunca deberia ocurrir");
-                break;
-                
-             // delantero   
-            case 1:
-                // Probabilidad de que tire
-                if (Probabilidad(80))
-                {
-                    // probabilidad de malla
-                    if (Probabilidad(SegundoEquipo.JugadoresActivos.get(index).skilloff-40)) 
-                    {
-                        int s = PrimerEquipo.JugadorEquipo("portero");
-                        int sdd = PrimerEquipo.IndexDeJugador(s);
-                        int por = PrimerEquipo.JugadoresActivos.get(sdd).skillpor-70;
-                        if (por < 0)
-                        {
-                            por = 0;
-                        }
-                        
-                        int pro = SegundoEquipo.JugadoresActivos.get(index).skilloff - por;
-                        // probabilidad de gol
-                        if (Probabilidad(pro)) 
-                        {
-                            SegundoEquipo.Puntuacion++;
-                            int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("portero")); 
-                            SegundoEquipo.JugadoresActivos.get(index).HasBall = false;                            
-                            // averiguar si despues de gol es saque de centro o portero                                                     
-                            PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                            
-                            info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),null,0));
-                        }
-                        // lo agarro el portero
-                        else 
-                        {
-                          int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("portero"));  
-                          SegundoEquipo.JugadoresActivos.get(index).HasBall = false;                             
-                          PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;                  
-                          
-                          info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),null,1));  
-                        }
-                        
-                    }
-                    // probabilidad de palo
-                    else if (Probabilidad(5))
-                    {
-                        // sale del campo
-                        if (Probabilidad(65)) 
-                        {
-                          int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("portero"));                         
-                          SegundoEquipo.JugadoresActivos.get(index).HasBall = false;                           
-                          PrimerEquipo.JugadoresActivos.get(sd).HasBall = true; 
-                          
-                          info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),null,2));  
-                        } 
-                        // gol de palo
-                        else 
-                        {
-                            SegundoEquipo.Puntuacion++;
-                            int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("portero"));                           
-                            SegundoEquipo.JugadoresActivos.get(index).HasBall = false;
-                            // averiguar si despues de gol es saque de centro o portero 
-                            PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                            
-                            info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),null,3));
-                        }                                             
-                    }
-                    
-                    // no malla ni palo, saque de portero
-                    else 
-                    {   int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("portero"));   
-                        SegundoEquipo.JugadoresActivos.get(index).HasBall = false;                          
-                        PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;    
-                        
-                        info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),null,4));
-                    }   
-                }
-                // pasa (deberia ser else if( 70%) con un else de falta)
-                else 
-                {
-                    // si el pase fue bueno
-                    if (Probabilidad(50)) 
-                    {
-                        int sd = SegundoEquipo.JugadorEquipo2("delantero",index);
-                        SegundoEquipo.JugadoresActivos.get(index).HasBall = false;
-                        SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                        
-                        info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),
-                                SegundoEquipo.JugadoresActivos.get(sd),5));
-
-                    }
-                    // si fue fuera de campo
-                    else 
-                    {
-                         int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("defensa"));
-                         SegundoEquipo.JugadoresActivos.get(index).HasBall = false;
-                         PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                         
-                         info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),
-                                PrimerEquipo.JugadoresActivos.get(sd),6));
-                    }
-                }
-                
-                break;  
-                
-            // centro
-            case 2: 
-                // probabilidad de pase hacia un delantero 85
-                if (Probabilidad(85)) 
-                {
-                    int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("delantero")); // index de otro jugador
-                    //
-                    int sdd = SegundoEquipo.JugadoresActivos.get(sd).id;
-                   /* System.out.println(sdd  + " sdd");
-                    System.out.println("index " + idd); 
-                    System.out.println("");               */ 
-                    //
-                    SegundoEquipo.JugadoresActivos.get(index).HasBall = false;
-                    SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),
-                                SegundoEquipo.JugadoresActivos.get(sd),5));
-                    
-                }
-                // probablidad que le quiten la pelota             
-                else if (Probabilidad(50)) 
-                {
-                    int sd = PrimerEquipo.IndexDeJugador(PrimerEquipo.JugadorEquipo("delantero"));
-                    
-                    SegundoEquipo.JugadoresActivos.get(index).HasBall = false;     
-                    PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                    info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),
-                                PrimerEquipo.JugadoresActivos.get(sd),6));
-                    
-                    // aqui va probabilidad de falta
-                    
-                    
-                }
-                // proabilidad que de un pase a un centro
-                else
-                {
-                    int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("centro"));
-                    SegundoEquipo.JugadoresActivos.get(index).HasBall = false;
-                    SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                    info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),
-                                SegundoEquipo.JugadoresActivos.get(sd),5));
-                }
-                break;  
-                
-             // defensa   
-            case 3: 
-                // probabilidad de pase hacia un centro
-                if (Probabilidad(85)) 
-                {
-                    int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("centro"));
-                    SegundoEquipo.JugadoresActivos.get(index).HasBall = false;
-                    SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                    info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),
-                                SegundoEquipo.JugadoresActivos.get(sd),5));
-                    
-                }                
-                // proabilidad que de un pase a un defensa
-                else
-                {    
-                    int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("defensa"));
-                    SegundoEquipo.JugadoresActivos.get(index).HasBall = false;
-                    SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                    info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),
-                                SegundoEquipo.JugadoresActivos.get(sd),5));
-                    
-                }
-                
-                
-                break;
-                
-            // potero    
-            case 4:                
-                // da pase a defensa
-                int sd = SegundoEquipo.IndexDeJugador(SegundoEquipo.JugadorEquipo("defensa"));
-                SegundoEquipo.JugadoresActivos.get(index).HasBall = false;
-                SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;
-                    
-                info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(index),
-                        SegundoEquipo.JugadoresActivos.get(sd),5));
-                break;
-            
-                       
-        }
-        
-        
-        
-        
-        
-    } // accion de equipo 2
     
     public void action(equipo A, equipo B) {
         // determinar cual es el id del jugador con la pelota
@@ -923,15 +433,46 @@ class juego
                 break;
             // portero    
             case 4: 
-                int indec = A.IndexDeJugador(A.JugadorEquipo2("defensa",idd));
-                    index = A.IndexDeJugador(idd);
-                    A.JugadoresActivos.get(index).HasBall = false;
-                    A.JugadoresActivos.get(indec).HasBall = true;
-                    info.AddLog(StrParaLog(A.JugadoresActivos.get(index),
-                                A.JugadoresActivos.get(indec),5));
+                           
+                // probabilidad que el portero de un pase bien a un defensa
+                if (Probabilidad(80))
+                {
+                    int indec = A.IndexDeJugador(A.JugadorEquipo2("defensa",idd));
+                        index = A.IndexDeJugador(idd);
+                        A.JugadoresActivos.get(index).HasBall = false;
+                        A.JugadoresActivos.get(indec).HasBall = true;
+                        info.AddLog(StrParaLog(A.JugadoresActivos.get(index),
+                            A.JugadoresActivos.get(indec),5));
+                }
+                
+                // probabilidad que cuando el portero de un pase, se la quite un centro del otro equipo
+                else if (Probabilidad(20))
+                {
+                int indez = B.IndexDeJugador(B.JugadorEquipo("centro"));
+                index = A.IndexDeJugador(idd);
+                A.JugadoresActivos.get(index).HasBall = false;     
+                B.JugadoresActivos.get(indez).HasBall = true;
+                
+                info.AddLog(StrParaLog(A.JugadoresActivos.get(index),
+                    B.JugadoresActivos.get(indez),10));
+                    
+                
+                }
+                
+                // probabilidad de que de un pase a un centro correctamente 
+                else 
+                {
+                    int indec = A.IndexDeJugador(A.JugadorEquipo2("centro",idd));
+                        index = A.IndexDeJugador(idd);
+                        A.JugadoresActivos.get(index).HasBall = false;
+                        A.JugadoresActivos.get(indec).HasBall = true;
+                        info.AddLog(StrParaLog(A.JugadoresActivos.get(index),
+                            A.JugadoresActivos.get(indec),5));
+                    
+                }
                 break;               
         }  
-    }
+    } // una accion
     
     public void inicio(){
     
@@ -941,7 +482,9 @@ class juego
             int sss = PrimerEquipo.JugadorEquipo("centro");
             int sd = PrimerEquipo.IndexDeJugador(sss);
             PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
-            info.AddLog("El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda " + PrimerEquipo.enombre + " le toca sacar.");
+            String s = "El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda " + PrimerEquipo.enombre + " le toca sacar.";
+            System.out.println(s);
+            info.log.println(s);
             info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(sd),null,7));
             
            
@@ -952,7 +495,9 @@ class juego
             int sss = SegundoEquipo.JugadorEquipo("centro");
             int sd = SegundoEquipo.IndexDeJugador(sss);
             SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;;
-            info.AddLog("El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda " + SegundoEquipo.enombre + " le toca sacar.");
+            String sdd = "El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda " + SegundoEquipo.enombre + " le toca sacar.";
+            System.out.println(sdd);
+            info.log.println(sdd);
             info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(sd),null,7));
             
         }
@@ -978,6 +523,7 @@ class juego
         x = 8 pasa, pero le quitaron la pelota
         
         x = 9 tira pero el portero lo agarra
+        x = 10 el portero saca pero el centro del otro equipo recupera
         */
         String re;
         switch (x)
@@ -1013,6 +559,9 @@ class juego
                 return re;
             case 9:
                 re = uno.nombre+  " recibe la pelota, tira y...." + dos.nombre + " lo agarra.";
+                return re;
+            case 10:
+                re = uno.nombre + " saca bien lejos, pero... " + dos.nombre + " del otro equipo, lo recupera!";
                 return re;
             default: return "rip nunca deberia ocurrir";
                 
