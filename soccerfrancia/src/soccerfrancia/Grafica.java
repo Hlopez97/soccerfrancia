@@ -93,51 +93,51 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonconfirmacion);
-        botonconfirmacion.setBounds(1083, 490, 160, 23);
+        botonconfirmacion.setBounds(1083, 490, 160, 25);
 
         Def_a_1.setText("jLabel3");
         getContentPane().add(Def_a_1);
-        Def_a_1.setBounds(190, 630, 34, 14);
+        Def_a_1.setBounds(190, 630, 34, 15);
 
         Def_a_2.setText("jLabel1");
         getContentPane().add(Def_a_2);
-        Def_a_2.setBounds(150, 260, 34, 14);
+        Def_a_2.setBounds(150, 260, 34, 15);
 
         Def_a_3.setText("jLabel1");
         getContentPane().add(Def_a_3);
-        Def_a_3.setBounds(150, 440, 34, 14);
+        Def_a_3.setBounds(150, 440, 34, 15);
 
         Def_a_4.setText("jLabel1");
         getContentPane().add(Def_a_4);
-        Def_a_4.setBounds(190, 70, 34, 14);
+        Def_a_4.setBounds(190, 70, 34, 15);
 
         Med_a_1.setText("jLabel1");
         getContentPane().add(Med_a_1);
-        Med_a_1.setBounds(280, 190, 34, 14);
+        Med_a_1.setBounds(280, 190, 34, 15);
 
         Med_a_2.setText("jLabel1");
         getContentPane().add(Med_a_2);
-        Med_a_2.setBounds(280, 510, 34, 14);
+        Med_a_2.setBounds(280, 510, 34, 15);
 
         Med_a_3.setText("jLabel1");
         getContentPane().add(Med_a_3);
-        Med_a_3.setBounds(220, 350, 34, 14);
+        Med_a_3.setBounds(220, 350, 34, 15);
 
         Atc_a_1.setText("jLabel1");
         getContentPane().add(Atc_a_1);
-        Atc_a_1.setBounds(410, 350, 34, 14);
+        Atc_a_1.setBounds(410, 350, 34, 15);
 
         Atc_a_2.setText("jLabel1");
         getContentPane().add(Atc_a_2);
-        Atc_a_2.setBounds(420, 120, 34, 14);
+        Atc_a_2.setBounds(420, 120, 34, 15);
 
         Atc_a_3.setText("jLabel1");
         getContentPane().add(Atc_a_3);
-        Atc_a_3.setBounds(420, 630, 34, 14);
+        Atc_a_3.setBounds(420, 630, 34, 15);
 
-        Portero_a.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Real Madrid/Porteros/1_rezized.png"))); // NOI18N
+        Portero_a.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Porteros/1.png"))); // NOI18N
         getContentPane().add(Portero_a);
-        Portero_a.setBounds(30, 320, 80, 80);
+        Portero_a.setBounds(10, 300, 110, 100);
 
         Marcador.setText("Aqui va el contador");
         getContentPane().add(Marcador);
@@ -149,47 +149,47 @@ public class Grafica extends javax.swing.JFrame {
 
         Portero_b.setText("jLabel1");
         getContentPane().add(Portero_b);
-        Portero_b.setBounds(890, 350, 34, 14);
+        Portero_b.setBounds(890, 350, 34, 15);
 
         Def_b_1.setText("jLabel2");
         getContentPane().add(Def_b_1);
-        Def_b_1.setBounds(740, 630, 34, 14);
+        Def_b_1.setBounds(740, 630, 34, 15);
 
         Def_b_2.setText("jLabel1");
         getContentPane().add(Def_b_2);
-        Def_b_2.setBounds(770, 440, 34, 14);
+        Def_b_2.setBounds(770, 440, 34, 15);
 
         Def_b_3.setText("jLabel1");
         getContentPane().add(Def_b_3);
-        Def_b_3.setBounds(770, 260, 34, 14);
+        Def_b_3.setBounds(770, 260, 34, 15);
 
         Def_b_4.setText("jLabel1");
         getContentPane().add(Def_b_4);
-        Def_b_4.setBounds(740, 70, 34, 14);
+        Def_b_4.setBounds(740, 70, 34, 15);
 
         Med_b_1.setText("jLabel1");
         getContentPane().add(Med_b_1);
-        Med_b_1.setBounds(630, 190, 34, 14);
+        Med_b_1.setBounds(630, 190, 34, 15);
 
         Med_b_2.setText("jLabel1");
         getContentPane().add(Med_b_2);
-        Med_b_2.setBounds(640, 510, 34, 14);
+        Med_b_2.setBounds(640, 510, 34, 15);
 
         Med_b_3.setText("jLabel1");
         getContentPane().add(Med_b_3);
-        Med_b_3.setBounds(710, 350, 34, 14);
+        Med_b_3.setBounds(710, 350, 34, 15);
 
         Atc_b_1.setText("jLabel1");
         getContentPane().add(Atc_b_1);
-        Atc_b_1.setBounds(520, 350, 34, 14);
+        Atc_b_1.setBounds(520, 350, 34, 15);
 
         Atc_b_2.setText("jLabel1");
         getContentPane().add(Atc_b_2);
-        Atc_b_2.setBounds(500, 120, 34, 14);
+        Atc_b_2.setBounds(500, 120, 34, 15);
 
         Atc_b_3.setText("jLabel1");
         getContentPane().add(Atc_b_3);
-        Atc_b_3.setBounds(510, 630, 34, 14);
+        Atc_b_3.setBounds(510, 630, 34, 15);
 
         Restart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Photoshop_General/Reset_rezized.png"))); // NOI18N
         Restart.setBorderPainted(false);
@@ -209,11 +209,11 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Formacion_a);
-        Formacion_a.setBounds(980, 450, 120, 20);
+        Formacion_a.setBounds(980, 450, 120, 24);
 
         Formacion_b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"4-3-3(a)", "4-3-3(b)" }));
         getContentPane().add(Formacion_b);
-        Formacion_b.setBounds(1220, 450, 120, 20);
+        Formacion_b.setBounds(1220, 450, 120, 24);
 
         Equipo_a.setBackground(new java.awt.Color(204, 204, 204));
         Equipo_a.setForeground(new java.awt.Color(102, 102, 102));

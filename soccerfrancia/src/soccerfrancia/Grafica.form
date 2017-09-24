@@ -174,12 +174,12 @@
     <Component class="javax.swing.JLabel" name="Portero_a">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Real Madrid/Porteros/1_rezized.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Porteros/1.png"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="320" width="80" height="80"/>
+          <AbsoluteConstraints x="10" y="300" width="110" height="100"/>
         </Constraint>
       </Constraints>
     </Component>
