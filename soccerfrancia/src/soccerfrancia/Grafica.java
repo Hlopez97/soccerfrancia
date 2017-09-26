@@ -29,6 +29,7 @@ public class Grafica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         Log_Juego = new javax.swing.JScrollPane();
         Log_Texto = new javax.swing.JTextField();
         botonconfirmacion = new javax.swing.JButton();
@@ -63,6 +64,10 @@ public class Grafica extends javax.swing.JFrame {
         Equipo_b = new javax.swing.JTextField();
         Start = new javax.swing.JButton();
         Fondo_log = new javax.swing.JLabel();
+=======
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLabel1 = new javax.swing.JLabel();
+>>>>>>> parent of 7aad4d2... visul pull
         Fondo_Campo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,7 +76,10 @@ public class Grafica extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1400, 1250));
         setName("SoccerFrancia"); // NOI18N
         getContentPane().setLayout(null);
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(980, 150, 320, 220);
 
+<<<<<<< HEAD
         Log_Juego.setBackground(new java.awt.Color(153, 153, 153));
 
         Log_Texto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -253,15 +261,26 @@ public class Grafica extends javax.swing.JFrame {
         Fondo_log.setText("Fondo_Contador");
         getContentPane().add(Fondo_log);
         Fondo_log.setBounds(960, 0, 410, 770);
+=======
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lucas\\Desktop\\Visual\\Photoshop_General\\try1.png")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(30, 290, 110, 100);
+>>>>>>> parent of 7aad4d2... visul pull
 
         Fondo_Campo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/try.jpg"))); // NOI18N
-        Fondo_Campo.setText("Fondo_Campo");
+        Fondo_Campo.setText("jLabel1");
         getContentPane().add(Fondo_Campo);
+<<<<<<< HEAD
         Fondo_Campo.setBounds(0, 0, 960, 710);
+=======
+        Fondo_Campo.setBounds(0, 0, 980, 700);
+>>>>>>> parent of 7aad4d2... visul pull
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     private void Equipo_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Equipo_aActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Equipo_aActionPerformed
@@ -315,6 +334,8 @@ public class Grafica extends javax.swing.JFrame {
         //Boton encargado de empezar el juego  
     }//GEN-LAST:event_StartActionPerformed
 
+=======
+>>>>>>> parent of 7aad4d2... visul pull
     /**
      * @param args the command line arguments
      */
@@ -351,23 +372,8 @@ public class Grafica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Atc_a_1;
-    private javax.swing.JLabel Atc_a_2;
-    private javax.swing.JLabel Atc_a_3;
-    private javax.swing.JLabel Atc_b_1;
-    private javax.swing.JLabel Atc_b_2;
-    private javax.swing.JLabel Atc_b_3;
-    private javax.swing.JLabel Def_a_1;
-    private javax.swing.JLabel Def_a_2;
-    private javax.swing.JLabel Def_a_3;
-    private javax.swing.JLabel Def_a_4;
-    private javax.swing.JLabel Def_b_1;
-    private javax.swing.JLabel Def_b_2;
-    private javax.swing.JLabel Def_b_3;
-    private javax.swing.JLabel Def_b_4;
-    private javax.swing.JTextField Equipo_a;
-    private javax.swing.JTextField Equipo_b;
     private javax.swing.JLabel Fondo_Campo;
+<<<<<<< HEAD
     private javax.swing.JLabel Fondo_log;
     private javax.swing.JComboBox<String> Formacion_a;
     private javax.swing.JComboBox<String> Formacion_b;
@@ -386,5 +392,9 @@ public class Grafica extends javax.swing.JFrame {
     private javax.swing.JButton Start;
     private javax.swing.JLabel Tiempo;
     private javax.swing.JButton botonconfirmacion;
+=======
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+>>>>>>> parent of 7aad4d2... visul pull
     // End of variables declaration//GEN-END:variables
 }
