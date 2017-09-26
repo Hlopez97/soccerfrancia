@@ -42,6 +42,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <SubComponents>
         <Component class="javax.swing.JTextField" name="Log_Texto">
           <Properties>
@@ -259,10 +260,19 @@
           <Image iconType="2" name="C:\Users\Lucas\Desktop\Visual\Photoshop_General\try1.png"/>
         </Property>
 >>>>>>> parent of 7aad4d2... visul pull
+=======
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\Lucas\Desktop\Visual\Photoshop_General\try1.png"/>
+        </Property>
+>>>>>>> parent of 7aad4d2... visul pull
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
 <<<<<<< HEAD
           <AbsoluteConstraints x="630" y="190" width="-1" height="-1"/>
         </Constraint>
@@ -437,6 +447,9 @@
 =======
           <AbsoluteConstraints x="30" y="290" width="110" height="100"/>
 >>>>>>> parent of 7aad4d2... visul pull
+=======
+          <AbsoluteConstraints x="30" y="290" width="110" height="100"/>
+>>>>>>> parent of 7aad4d2... visul pull
         </Constraint>
       </Constraints>
     </Component>
@@ -446,17 +459,23 @@
           <Image iconType="3" name="/soccerfrancia/try.jpg"/>
         </Property>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="Fondo_Campo"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="960" height="710"/>
 =======
+=======
+>>>>>>> parent of 7aad4d2... visul pull
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="980" height="700"/>
+<<<<<<< HEAD
+>>>>>>> parent of 7aad4d2... visul pull
+=======
 >>>>>>> parent of 7aad4d2... visul pull
         </Constraint>
       </Constraints>
