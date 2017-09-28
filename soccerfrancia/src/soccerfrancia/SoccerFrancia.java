@@ -632,10 +632,37 @@ class juego
                         
                     }
                     // falta grave
-                    else {}
-                    
-                    
-                    
+                    else 
+                    {
+                        int indez = B.IndexDeJugador(B.JugadorEquipo("defensa"));
+                        index = A.IndexDeJugador(idd);
+                        if (A.Cambios <3)
+                        {
+                            
+                        List<String> p = new ArrayList();
+                        p = A.CambioDePlayer(idd);
+                        info.log.println("Falta grave! "+p.get(0)+" es intercambiado por " + p.get(1)+ " ademas, por causar esta herida" 
+                                + B.JugadoresActivos.get(indez).nombre + "es eliminado del campo.");
+                            
+                        }
+                        else 
+                        {
+                            info.log.println("Falta grave! "+ "Al no tener mas cambios disponibles, "+ A.JugadoresActivos.get(index).nombre + " sale del campo"+" ademas, por causar esta herida" 
+                                + B.JugadoresActivos.get(indez).nombre + "es eliminado del campo.");
+                            
+                            A.JugadoresActivos.remove(index);
+                            if (A.JugadoresActivos.size() < 7)
+                            {
+                                gg = true;
+                            }
+                            
+                        }
+                        B.JugadoresActivos.remove(indez);
+                        if (B.JugadoresActivos.size() < 7)
+                            {
+                                gg = true;
+                            }                  
+                    }  
                     
                 }
                 break;               
@@ -1108,7 +1135,7 @@ class equipo
         list.add(nombre1);
         list.add(nombre2);
         return list;
-    } // saca de activos y mete en banca y viceversa, id 99 = random
+    } // saca de activos y mete en banca y viceversa, id 99 = random::: nombre 1 es el entrando, nombre 2 es el saliendo
 }
 //
 
