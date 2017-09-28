@@ -217,7 +217,6 @@ class juego
         {
         info.minActual = 90;
         info.segActual = 00;
-        
         recorrido();
         
         }
@@ -293,8 +292,19 @@ class juego
         }
         else 
         {
-        info.AddLog("se acabo el juego... que tragedia RIP maldito gui att: lucas bai");
-        // meter aqui quien causo el fallo y por lo tanto declarar al otro equipo ganador
+            info.AddLog("se acabo el juego... que tragedia RIP maldito gui att: lucas bai");
+            if (SegundoEquipo.JugadoresActivos.size() < 7)
+            {
+                info.AddLog("por falta de jugadores causado por tarjetas roja, "+ SegundoEquipo.enombre + " Se retira de juego con mcha rabia") ;
+                info.AddLog("Gana " + PrimerEquipo.enombre );
+            }
+            else 
+            {
+                info.AddLog("por falta de jugadores causado por tarjetas roja, "+ PrimerEquipo.enombre + " Se retira de juego con mcha rabia") ;
+                info.AddLog("Gana " + SegundoEquipo.enombre );               
+            }
+        
+        
         }
         
         //Llame a los metodos ue imprimen la info del juego en el visual
@@ -568,7 +578,7 @@ class juego
                     }
                 }
                 //sino tira pasa, deberia ser else if con prob de falta
-                else 
+                else if (Probabilidad(50))
                 {
                     // si el pase fue bueno 50
                     if (Probabilidad(50)) 
@@ -591,6 +601,42 @@ class juego
                        B.JugadoresActivos.get(indez).HasBall = true;                            
                        info.AddLog(StrParaLog(A.JugadoresActivos.get(index),B.JugadoresActivos.get(indez),6)); 
                     }
+                }
+                // falta
+                else
+                {
+                    // falta leve
+                    if (Probabilidad(70))
+                    {
+                       int indez = B.IndexDeJugador(B.JugadorEquipo("defensa"));
+                       index = A.IndexDeJugador(idd); 
+                       B.JugadoresActivos.get(indez).FaltasLeve++;
+                       
+                       if (B.JugadoresActivos.get(indez).FaltasLeve > 3)
+                       {
+                            B.JugadoresActivos.get(indez).FaltasLeve = 0;
+                            B.JugadoresActivos.get(indez).TarjetasAmarilla++;
+                            if (B.JugadoresActivos.get(indez).TarjetasAmarilla > 2)
+                            {
+                                B.JugadoresActivos.get(indez).TarjetasAmarilla = 0;
+                                info.AddLog("Falta leve de " +B.JugadoresActivos.get(indez).nombre + " con su historial en este juego, recibe tarjeta roja y es eliminado del campo!"
+                                        + A.JugadoresActivos.get(index).nombre +" sigue con la pelota. " );
+                                B.JugadoresActivos.remove(indez);
+                                if (B.JugadoresActivos.size() < 7)
+                                {
+                                    gg = true;
+                                }
+                            }
+                       }
+                        
+                        
+                    }
+                    // falta grave
+                    else {}
+                    
+                    
+                    
+                    
                 }
                 break;               
             // centro    
@@ -842,6 +888,8 @@ class player
     int skilloff; int skilldri; int skilldef;  int skillpor;
     boolean HasBall = false; // false hasta que empieza el juego
     int idvisual;
+    int FaltasLeve = 0;
+    int TarjetasAmarilla = 0;
     
     public player (int pid, String pnombre, String pposicion, int pskilloff, int pskilldri, int pskilldef, int pskillpor, int pidvisual) {
         // aqui se setean los valores iniciales, es el constructor
