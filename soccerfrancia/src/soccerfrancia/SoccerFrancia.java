@@ -35,8 +35,7 @@ public class SoccerFrancia extends Application {
    
     public void start(Stage primaryStage) {
         // aqui empieza el programa
-        
-        Button btn = new Button();
+        /*Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction
         (new EventHandler<ActionEvent>(){
@@ -53,126 +52,186 @@ public class SoccerFrancia extends Application {
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
-        primaryStage.show();
+        primaryStage.show();*/
     }
 
     public static void main(String[] args) throws IOException {
-        launch(args); // esto corre el metodo start
-        
-        // cualquier cosa aqui lo hace despues de correr el metodo start
+        // esto empieza el programa
         juego prueba = new juego(1);
-        prueba.start();
+        prueba.boton();
+        
+        
  
     } 
 }
+
+//clase central donde se realiza el juego
 class juego 
 {
+    //Variales publicas de la clase juego
     int kk;
     informacion info;
     equipo PrimerEquipo;
     equipo SegundoEquipo;
     boolean gg = false;
+    Grafica zzz = new Grafica();
+    String actualtiempo;
+    String actualmarcador;
+
     
     public juego(int id) throws IOException {
         info = new informacion(1);
         kk = id;
-        PrimerEquipo = new equipo(1, "equipo1");
-        SegundoEquipo = new equipo(2, "equipo2");   
+        PrimerEquipo = new equipo(1, "Juventus");
+        SegundoEquipo = new equipo(2, "Barcelona");   
         setplayers(PrimerEquipo, SegundoEquipo);
         PrimerEquipo.start();
         SegundoEquipo.start();
+        zzz.setVisible(true);
         
-    } // Metodo constructor
-     
+        
+        
+    } // Metodo constructor     
     public void start() {
         
         Timer();
     }
     
+    //Empieza el juego cuando se presiona start
+    public void boton()
+    {
+       while (!zzz.pressed)
+       {
+           System.out.print("");
+           if (zzz.pressed){
+               
+           break;}
+       }
+       start();
+    };
+    
+    //Reinicia ciclo cuando se presiona restart
+    public void reset()
+    {
+       while (!zzz.pressedrst)
+       {
+           System.out.print("");
+           if (zzz.pressedrst){
+               
+           break;}
+       }
+       boton();
+    };
+    
+    //Metodo donde se encuentran las info de los jugadores
     public static void setplayers(equipo uno, equipo dos) {
-        uno.Jugadores.add(new player(1,"Alucas","delantero",70,50,20,0,15));     
-        uno.Jugadores.add(new player(2,"Alucas","delantero",70,50,20,0,15));
-        uno.Jugadores.add(new player(3,"Alucas","delantero",70,50,20,0,15));
-        uno.Jugadores.add(new player(4,"Alucas","delantero",70,50,20,0,15));
-        uno.Jugadores.add(new player(5,"Alucas","delantero",70,50,20,0,15));
-        uno.Jugadores.add(new player(6,"Alucas","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(1,"Cuadrado","delantero",70,50,20,0,15));     
+        uno.Jugadores.add(new player(2,"Dybala","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(3,"Higuain","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(4,"Dybala","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(5,"Douglas Costa","delantero",70,50,20,0,15));
+        uno.Jugadores.add(new player(6,"Pjaca","delantero",70,50,20,0,15));
         
-        uno.Jugadores.add(new player(7,"Blucas","centro",70,50,20,0,15));
-        uno.Jugadores.add(new player(8,"Blucas","centro",70,50,20,0,15));
-        uno.Jugadores.add(new player(9,"Blucas","centro",70,50,20,0,15));
-        uno.Jugadores.add(new player(10,"Blucas","centro",70,50,20,0,15));
-        uno.Jugadores.add(new player(11,"Blucas","centro",70,50,20,0,15));
-        uno.Jugadores.add(new player(12,"Blucas","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(7,"Miralem Pjanic","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(8,"Sami Khedira","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(9,"Claudio Marchiso","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(10,"Blaise Matuidi","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(11,"Stefano Sturaro","centro",70,50,20,0,15));
+        uno.Jugadores.add(new player(12,"Asamoah","centro",70,50,20,0,15));
         
-        uno.Jugadores.add(new player(13,"Dlucas","portero",70,50,20,90,15));
-        uno.Jugadores.add(new player(14,"Dlucas","portero",70,50,20,0,15));
-        uno.Jugadores.add(new player(15,"Dlucas","portero",70,50,20,0,15));
+        uno.Jugadores.add(new player(13,"Gigi Buffon","portero",70,50,20,90,15));
+        uno.Jugadores.add(new player(14,"Carlo Pinsoglio","portero",70,50,20,0,15));
+        uno.Jugadores.add(new player(15,"Wojciech Szczesny","portero",70,50,20,0,15));
         
-        uno.Jugadores.add(new player(16,"Clucas","defensa",70,50,20,0,15));
-        uno.Jugadores.add(new player(17,"Clucas","defensa",70,50,20,0,15));
-        uno.Jugadores.add(new player(18,"Clucas","defensa",70,50,20,0,15));
-        uno.Jugadores.add(new player(19,"Clucas","defensa",70,50,20,0,15));
-        uno.Jugadores.add(new player(20,"Clucas","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(16,"Mattia De Sciglio","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(17,"Giorgio Chiellieni","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(18,"Medhi Benatia","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(19,"Alex Sandro","defensa",70,50,20,0,15));
+        uno.Jugadores.add(new player(20,"Andrea Barzagli","defensa",70,50,20,0,15));
         
         
         
         // dos
         
-        dos.Jugadores.add(new player(1,"zAlucas","delantero",70,50,20,0,15));     
-        dos.Jugadores.add(new player(2,"zAlucas","delantero",70,50,20,0,15));
-        dos.Jugadores.add(new player(3,"zAlucas","delantero",70,50,20,0,15));
-        dos.Jugadores.add(new player(4,"zAlucas","delantero",70,50,20,0,15));
-        dos.Jugadores.add(new player(5,"zAlucas","delantero",70,50,20,0,15));
-        dos.Jugadores.add(new player(6,"zAlucas","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(1,"Leo Messi","delantero",70,50,20,0,15));     
+        dos.Jugadores.add(new player(2,"Dembele","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(3,"Luis Suarez","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(4,"Paco Alcazer","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(5,"Deulofeu","delantero",70,50,20,0,15));
+        dos.Jugadores.add(new player(6,"Turan","delantero",70,50,20,0,15));
         
-        dos.Jugadores.add(new player(7,"zBlucas","centro",70,50,20,0,15));
-        dos.Jugadores.add(new player(8,"zBlucas","centro",70,50,20,0,15));
-        dos.Jugadores.add(new player(9,"zBlucas","centro",70,50,20,0,15));
-        dos.Jugadores.add(new player(10,"zBlucas","centro",70,50,20,0,15));
-        dos.Jugadores.add(new player(11,"zBlucas","centro",70,50,20,0,15));
-        dos.Jugadores.add(new player(12,"zBlucas","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(7,"Iniesta","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(8,"Busquets","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(9,"Rakitic","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(10,"Paulinho","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(11,"Sergio Roberto","centro",70,50,20,0,15));
+        dos.Jugadores.add(new player(12,"Rafinha","centro",70,50,20,0,15));
         
-        dos.Jugadores.add(new player(13,"zDlucas","portero",70,50,20,90,15));
-        dos.Jugadores.add(new player(14,"zDlucas","portero",70,50,20,80,15));
-        dos.Jugadores.add(new player(15,"zDlucas","portero",70,50,20,80,15));
+        dos.Jugadores.add(new player(13,"Ter Stegen","portero",70,50,20,90,15));
+        dos.Jugadores.add(new player(14,"Cillissen","portero",70,50,20,80,15));
+        dos.Jugadores.add(new player(15,"Omandi","portero",70,50,20,80,15));
         
-        dos.Jugadores.add(new player(16,"zClucas","defensa",70,50,20,0,15));
-        dos.Jugadores.add(new player(17,"zClucas","defensa",70,50,20,0,15));
-        dos.Jugadores.add(new player(18,"zClucas","defensa",70,50,20,0,15));
-        dos.Jugadores.add(new player(19,"zClucas","defensa",70,50,20,0,15));
-        dos.Jugadores.add(new player(20,"zClucas","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(16,"Umtiti","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(17,"Pique","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(18,"Vermaleen","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(19,"Alba","defensa",70,50,20,0,15));
+        dos.Jugadores.add(new player(20,"Semedo","defensa",70,50,20,0,15));
         
         
         
     } // crea los 20 jugadores por equipo
-    
+    //Tiempo en ue transcurre el juego
     public void Timer() {
+         Grafica grafica = new Grafica();
         
+         //ciclo de minutos
         int min; int seg;
         for (min = 0; min <= 89; min++) 
         {
             
-            
+            //ciclo de segundos
             for (seg = 0; seg <= 59; seg++)
             {
-                info.minActual = min;
+                info.minActual = min;                
                 info.segActual = seg;
+                String mintxt = String.format("%02d", min);
+                String segtxt = String.format("%02d", seg);
+                actualtiempo = mintxt+" : "+segtxt;
+                String mar1txt = String.format("%02d", PrimerEquipo.Puntuacion);
+                String mar2txt = String.format("%02d", SegundoEquipo.Puntuacion);
+                actualmarcador = mar1txt+" || "+mar2txt;
+                
                 recorrido();
-                DelaySegundo();               
+                DelaySegundo();  
+                
                 if (gg) {break;}
                 
             }
             if (gg) {break;}           
         }
+        String mintxt = String.format("%02d", 90);
+        String segtxt = String.format("%02d", 0);
+        actualtiempo = mintxt+" : "+segtxt;
+        
         if (!gg)
         {
         info.minActual = 90;
         info.segActual = 00;
+        
         recorrido();
+        
         }
+        
+        PrimerEquipo.Puntuacion = 0;
+        SegundoEquipo.Puntuacion = 0;
+        zzz.pressed = false;
+        zzz.pressedrst = false;
+        zzz.juju();
         info.log.close();
+        reset();
     } // Metodo timer que lleva el tiempo del juego
     
+    //Hace delay al tiempo transcurrido en el tiempo
     public void DelaySegundo() {
         
         try {   
@@ -180,25 +239,36 @@ class juego
         } catch(InterruptedException e){}
     } // Metodo que simula un seg de la vida real
     
+    //Realiza los comentarios del log en base a probabilidades
     public void recorrido() {
+        Grafica grafica = new Grafica();
         if (info.minActual == 0 && info.segActual == 0)
         {
             inicio();
         }
         else if (info.minActual == 45 && info.segActual == 0)
         {
-            info.AddLog("Medio Termino");
+            
+            info.AddLog("-----MEDIO TIEMPO-----");
         }
         else if (info.minActual == 90 && info.segActual == 0)
         {
+            
             info.AddLog("Se acabo el juego!");
-            info.AddLog("la puntuacion final es " + PrimerEquipo.Puntuacion + " a " + SegundoEquipo.Puntuacion);
+            
+            
+            
+            
+            info.AddLog("El marcador final es: " + PrimerEquipo.Puntuacion + " a " + SegundoEquipo.Puntuacion);
             if (PrimerEquipo.Puntuacion > SegundoEquipo.Puntuacion)
             {
+                
+                
                 info.AddLog("Gano " + PrimerEquipo.enombre);
             }
             else if (PrimerEquipo.Puntuacion < SegundoEquipo.Puntuacion)
             {
+                
                 info.AddLog("Gano " + SegundoEquipo.enombre);
             }
             else 
@@ -223,9 +293,14 @@ class juego
         }
         else 
         {
-        info.AddLog("se acabo el juego... que tragedia");
+        info.AddLog("se acabo el juego... que tragedia RIP maldito gui att: lucas bai");
         // meter aqui quien causo el fallo y por lo tanto declarar al otro equipo ganador
         }
+        
+        //Llame a los metodos ue imprimen la info del juego en el visual
+        zzz.jeje(info.actual);
+        zzz.jaja(actualtiempo);
+        zzz.jojo(actualmarcador);
        
     } // Metodo que dice que hacer
     
@@ -301,7 +376,7 @@ class juego
                    A.JugadoresActivos.get(index).HasBall = false;
                    B.JugadoresActivos.get(indezz).HasBall = true;
                    info.AddLog(StrParaLog(A.JugadoresActivos.get(index),B.JugadoresActivos.get(indez),12) 
-                           + " que immedeatamente la bota! y es recibido por " + B.JugadoresActivos.get(indezz).nombre);
+                           + " que immedeatamente la despeja! y es recibido por " + B.JugadoresActivos.get(indezz).nombre);
                    
                    
                }
@@ -314,7 +389,7 @@ class juego
                    A.JugadoresActivos.get(index).HasBall = false;
                    A.JugadoresActivos.get(indezz).HasBall = true;
                    info.AddLog(StrParaLog(A.JugadoresActivos.get(index),B.JugadoresActivos.get(indez),12) 
-                           + " que immedeatamente la bota! pero sale del campo, recibe la pelota " +  A.JugadoresActivos.get(indezz).nombre);
+                           + " que immedeatamente la despeja! pero sale del campo, recibe la pelota " +  A.JugadoresActivos.get(indezz).nombre);
                    
                    
                    
@@ -328,7 +403,7 @@ class juego
                    A.JugadoresActivos.get(index).HasBall = false;
                    A.JugadoresActivos.get(indezz).HasBall = true;
                    info.AddLog(StrParaLog(A.JugadoresActivos.get(index),B.JugadoresActivos.get(indez),12) 
-                           + " que immedeatamente la bota! pero el pase lo intercepta" +  A.JugadoresActivos.get(indezz).nombre);
+                           + " que immedeatamente la despeja! pero el pase lo intercepta" +  A.JugadoresActivos.get(indezz).nombre);
                    
                }
                
@@ -627,6 +702,7 @@ class juego
     } // una accion
     
     public void inicio(){
+        Grafica grafica = new Grafica();
     
         // si equipo 1 recibe la pelota 
         if (Probabilidad(100))
@@ -635,6 +711,7 @@ class juego
             int sd = PrimerEquipo.IndexDeJugador(sss);
             PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
             String s = "El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda " + PrimerEquipo.enombre + " le toca sacar.";
+            grafica.Log_Texto.setText(grafica.Log_Texto.getText() + "\r\n" + s);
             System.out.println(s);
             info.log.println(s);
             info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(sd),null,7));
@@ -648,6 +725,7 @@ class juego
             int sd = SegundoEquipo.IndexDeJugador(sss);
             SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;;
             String sdd = "El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda " + SegundoEquipo.enombre + " le toca sacar.";
+            grafica.Log_Texto.setText(grafica.Log_Texto.getText() + "\r\n" + sdd);
             System.out.println(sdd);
             info.log.println(sdd);
             info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(sd),null,7));
@@ -691,45 +769,46 @@ class juego
        
         */
         String re;
+        //Comentarios del juego
         switch (x)
         {
             
             case 0:
-                re = uno.nombre + " recibe la pelota, tira, y.... GOOOOL!!!";
+                re = " El jugador "+ uno.nombre + " recibe el balon, chuta el balon  y GOOOOOOOOOOOOOOOOOOL!!!";
                 return re;
             case 1:
-                re = uno.nombre + " recibe la pelota, tira... pero el portero contrario lo agarra!";
+                re = uno.nombre + " recibe la pelota, tira... pero el portero contrario atrapa el balon sin problemas.";
                 return re;
             case 2:
-                re = uno.nombre + " recibe la pelota, tira y... choca con el palo!... pero sale hacia afuera. ";
+                re = uno.nombre + " recibe la pelota, tira y LE DA AL PALOOOOO!... el balon salie hacia afuera, saque de arco. ";
                 return re;
             case 3: 
-                re = uno.nombre + " recibe la pelota, tira y... choca con el palo!... y... GOOOOL!!! ";
+                re = uno.nombre + " recibe la pelota, tira y... choca con el palo y sale hacia afuera, pero " + uno.nombre + " Le pega al rebote y GOOOOOOOOOOL!";
                 return re;
             case 4:
-                re = uno.nombre + " recibe la pelota, tira... pero no entro a malla.";
+                re = uno.nombre + " recibe la pelota, tira... pero se dirije afuera del arco... pelota larga....";
                 return re;
             case 5:
                 re = uno.nombre +  " da un pase a " + dos.nombre;
                 return re;
             case 6:
-                re = uno.nombre + " pasa pero... es fuera de campo! ahora a " + dos.nombre +
-                        " del otro equipo le toca sacar.";
+                re = uno.nombre + " pasa pero... es fuera de juego! ahora le toca sacar a " + dos.nombre +
+                        " del equipo contrario.";
                 return re;
             case 7:
                 re = uno.nombre + " recibe la pelota.";
                 return re;                    
             case 8:
-                re = uno.nombre + " da un pase, pero " + dos.nombre + " le quita la pelota.";
+                re = uno.nombre + " da un pase, pero " + dos.nombre + " le intercepta la pelota.";
                 return re;
             case 9:
-                re = uno.nombre+  " recibe la pelota, tira y...." + dos.nombre + " lo agarra.";
+                re = uno.nombre+  " recibe la pelota, tira a PUERTAAAA... Pero " + dos.nombre + " lo ataja.";
                 return re;
             case 10:
-                re = uno.nombre + " saca bien lejos, pero... " + dos.nombre + " del otro equipo, lo recupera!";
+                re = uno.nombre + " Da un pase largo, pero... " + dos.nombre + " del otro equipo, lo recupera!";
                 return re;               
             case 11:
-                re = uno.nombre + " recibe la pelota, tira y... el portero con mucho esfuerzo le desvia el disparo, es corner!";
+                re = uno.nombre + " recibe la pelota, tira y... el portero con mucho esfuerzo le desvia el disparo, es tiro de esquina!";
                 return re;               
             case 12:
                 re = uno.nombre + " le toca sacar de corner, este intenta pasar hacia el centro... pero es interceptado por " + dos.nombre;
@@ -741,7 +820,7 @@ class juego
                 re = uno.nombre + " saca de corner, " + dos.nombre + " le da con la cabeza! y.. el portero lo agarra!";
                 return re;
             case 15:
-                re = uno.nombre + " saca de corner, " + dos.nombre + " le da con la cabeza! y.. falla, bola a portero";
+                re = uno.nombre + " saca de corner, " + dos.nombre + " le da DE CHILENAAA Y!!! .. falla, bola a portero";
                 return re;
             default: return "rip nunca deberia ocurrir no case, default";
                 
@@ -754,7 +833,7 @@ class juego
 //
 
 
-//
+//Metodo con info de los jugadores
 class player
 {
     int id;   
@@ -781,7 +860,7 @@ class player
 //
 
 
-//
+//info de los equipos
 class equipo 
 {
     boolean isCorner = false; // para dar corners
@@ -986,13 +1065,16 @@ class equipo
 //
 
 
-//
+//Agrega info de tiempo marcador y comentarios en el log
 class informacion
 {
     int kk;
     int minActual;
     int segActual;
     PrintWriter log = new PrintWriter("log.txt");
+    String actual;
+    //String actualmarcador;
+    
     
     
     public informacion (int id) throws IOException {
@@ -1004,8 +1086,20 @@ class informacion
     }
     
     public void AddLog(String accion) {
-        System.out.println("["+minActual+":"+segActual+ "] -> " + accion);
-        log.println("["+minActual+":"+segActual+ "] -> " + accion);
+        
+        
+        //grafica.jLabel1.setText(String.valueOf(minActual));
+        /*grafica.Tiempo.setText(minActual + " : " + segActual);*/
+        //zzz.Log_Texto.append( "\r\n Hola");
+        //grafica.Edition(minActual, segActual, accion);
+        
+        String mintxt = String.format("%02d", minActual);
+        String segtxt = String.format("%02d", segActual);
+        
+        actual = "["+mintxt+":"+segtxt+ "] -> " + accion;   
+        System.out.println("["+mintxt+":"+segtxt+ "] -> " + accion);
+        log.println("["+mintxt+":"+segtxt+ "] -> " + accion);
+       
         // 
     }
 }
