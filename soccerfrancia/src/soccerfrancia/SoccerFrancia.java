@@ -182,7 +182,7 @@ class juego
     } // crea los 20 jugadores por equipo
     //Tiempo en ue transcurre el juego
     public void Timer() {
-         Grafica grafica = new Grafica();
+         
         
          //ciclo de minutos
         int min; int seg;
@@ -240,7 +240,7 @@ class juego
     
     //Realiza los comentarios del log en base a probabilidades
     public void recorrido() {
-        Grafica grafica = new Grafica();
+        
         if (info.minActual == 0 && info.segActual == 0)
         {
             inicio();
@@ -775,7 +775,7 @@ class juego
     } // una accion
     
     public void inicio(){
-        Grafica grafica = new Grafica();
+      
     
         // si equipo 1 recibe la pelota 
         if (Probabilidad(100))
@@ -784,7 +784,7 @@ class juego
             int sd = PrimerEquipo.IndexDeJugador(sss);
             PrimerEquipo.JugadoresActivos.get(sd).HasBall = true;
             String s = "El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda " + PrimerEquipo.enombre + " le toca sacar.";
-            grafica.Log_Texto.setText(grafica.Log_Texto.getText() + "\r\n" + s);
+            zzz.Log_Texto.setText(zzz.Log_Texto.getText() + "\r\n" + s);
             System.out.println(s);
             info.log.println(s);
             info.AddLog(StrParaLog(PrimerEquipo.JugadoresActivos.get(sd),null,7));
@@ -798,7 +798,7 @@ class juego
             int sd = SegundoEquipo.IndexDeJugador(sss);
             SegundoEquipo.JugadoresActivos.get(sd).HasBall = true;;
             String sdd = "El juego comienza hoy, un dia excelente y gracias a suerte en un tose de moneda " + SegundoEquipo.enombre + " le toca sacar.";
-            grafica.Log_Texto.setText(grafica.Log_Texto.getText() + "\r\n" + sdd);
+            zzz.Log_Texto.setText(zzz.Log_Texto.getText() + "\r\n" + sdd);
             System.out.println(sdd);
             info.log.println(sdd);
             info.AddLog(StrParaLog(SegundoEquipo.JugadoresActivos.get(sd),null,7));
@@ -1163,10 +1163,7 @@ class informacion
     public void AddLog(String accion) {
         
         
-        //grafica.jLabel1.setText(String.valueOf(minActual));
-        /*grafica.Tiempo.setText(minActual + " : " + segActual);*/
-        //zzz.Log_Texto.append( "\r\n Hola");
-        //grafica.Edition(minActual, segActual, accion);
+  
         
         String mintxt = String.format("%02d", minActual);
         String segtxt = String.format("%02d", segActual);
