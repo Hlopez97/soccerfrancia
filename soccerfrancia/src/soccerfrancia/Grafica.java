@@ -106,69 +106,69 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonconfirmacion);
-        botonconfirmacion.setBounds(1063, 490, 200, 25);
+        botonconfirmacion.setBounds(1063, 490, 200, 23);
 
         Def_a_1.setForeground(new java.awt.Color(255, 255, 255));
-        Def_a_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Defensas/3.png"))); // NOI18N
+        Def_a_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Defensas/3persona.png"))); // NOI18N
         Def_a_1.setText("jLabel3");
         getContentPane().add(Def_a_1);
         Def_a_1.setBounds(150, 590, 100, 100);
 
         Def_a_2.setForeground(new java.awt.Color(255, 255, 255));
-        Def_a_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Defensas/4.png"))); // NOI18N
+        Def_a_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Defensas/4persona.png"))); // NOI18N
         Def_a_2.setText("jLabel1");
         getContentPane().add(Def_a_2);
         Def_a_2.setBounds(110, 220, 100, 100);
 
         Def_a_3.setForeground(new java.awt.Color(255, 255, 255));
-        Def_a_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Defensas/5.png"))); // NOI18N
+        Def_a_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Defensas/5persona.png"))); // NOI18N
         Def_a_3.setText("jLabel1");
         getContentPane().add(Def_a_3);
         Def_a_3.setBounds(110, 400, 100, 100);
 
         Def_a_4.setForeground(new java.awt.Color(255, 255, 255));
-        Def_a_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Defensas/2.png"))); // NOI18N
+        Def_a_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Defensas/2persona.png"))); // NOI18N
         Def_a_4.setText("jLabel1");
         getContentPane().add(Def_a_4);
         Def_a_4.setBounds(150, 30, 100, 100);
 
         Med_a_1.setForeground(new java.awt.Color(255, 255, 255));
-        Med_a_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Mediocampos/10.png"))); // NOI18N
+        Med_a_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Mediocampos/10persona.png"))); // NOI18N
         Med_a_1.setText("jLabel1");
         getContentPane().add(Med_a_1);
         Med_a_1.setBounds(250, 110, 100, 100);
 
         Med_a_2.setForeground(new java.awt.Color(255, 255, 255));
-        Med_a_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Mediocampos/8.png"))); // NOI18N
+        Med_a_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Mediocampos/8persona.png"))); // NOI18N
         Med_a_2.setText("jLabel1");
         getContentPane().add(Med_a_2);
         Med_a_2.setBounds(250, 510, 100, 100);
 
         Med_a_3.setForeground(new java.awt.Color(255, 255, 255));
-        Med_a_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Mediocampos/16.png"))); // NOI18N
+        Med_a_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Mediocampos/16persona.png"))); // NOI18N
         Med_a_3.setText("jLabel1");
         getContentPane().add(Med_a_3);
         Med_a_3.setBounds(220, 310, 100, 100);
 
         Atc_a_1.setForeground(new java.awt.Color(255, 255, 255));
-        Atc_a_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Atacantes/20.png"))); // NOI18N
+        Atc_a_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Atacantes/20persona.png"))); // NOI18N
         Atc_a_1.setText("jLabel1");
         getContentPane().add(Atc_a_1);
         Atc_a_1.setBounds(370, 310, 100, 100);
 
         Atc_a_2.setForeground(new java.awt.Color(255, 255, 255));
-        Atc_a_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Atacantes/11.png"))); // NOI18N
+        Atc_a_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Atacantes/11persona.png"))); // NOI18N
         Atc_a_2.setText("jLabel1");
         getContentPane().add(Atc_a_2);
         Atc_a_2.setBounds(370, 80, 100, 100);
 
         Atc_a_3.setForeground(new java.awt.Color(255, 255, 255));
-        Atc_a_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Atacantes/7.png"))); // NOI18N
+        Atc_a_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Atacantes/7persona.png"))); // NOI18N
         Atc_a_3.setText("jLabel1");
         getContentPane().add(Atc_a_3);
         Atc_a_3.setBounds(370, 540, 100, 100);
 
-        Portero_a.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Real Madrid/Porteros/1.png"))); // NOI18N
+        Portero_a.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Juventus/Porteros/1persona.png"))); // NOI18N
         getContentPane().add(Portero_a);
         Portero_a.setBounds(10, 310, 100, 100);
 
@@ -185,67 +185,67 @@ public class Grafica extends javax.swing.JFrame {
         Tiempo.setBounds(1000, 10, 120, 50);
 
         Portero_b.setForeground(new java.awt.Color(255, 255, 255));
-        Portero_b.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Porteros/13.png"))); // NOI18N
+        Portero_b.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Porteros/13persona.png"))); // NOI18N
         Portero_b.setText("jLabel1");
         getContentPane().add(Portero_b);
         Portero_b.setBounds(850, 310, 100, 100);
 
         Def_b_1.setForeground(new java.awt.Color(255, 255, 255));
-        Def_b_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Defensas/4.png"))); // NOI18N
+        Def_b_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Defensas/4persona.png"))); // NOI18N
         Def_b_1.setText("jLabel2");
         getContentPane().add(Def_b_1);
         Def_b_1.setBounds(710, 590, 100, 100);
 
         Def_b_2.setForeground(new java.awt.Color(255, 255, 255));
-        Def_b_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Defensas/5.png"))); // NOI18N
+        Def_b_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Defensas/5persona.png"))); // NOI18N
         Def_b_2.setText("jLabel1");
         getContentPane().add(Def_b_2);
         Def_b_2.setBounds(740, 400, 100, 100);
 
         Def_b_3.setForeground(new java.awt.Color(255, 255, 255));
-        Def_b_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Defensas/2.png"))); // NOI18N
+        Def_b_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Defensas/2persona.png"))); // NOI18N
         Def_b_3.setText("jLabel1");
         getContentPane().add(Def_b_3);
         Def_b_3.setBounds(740, 220, 100, 100);
 
         Def_b_4.setForeground(new java.awt.Color(255, 255, 255));
-        Def_b_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Defensas/12.png"))); // NOI18N
+        Def_b_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Defensas/12persona.png"))); // NOI18N
         Def_b_4.setText("jLabel1");
         getContentPane().add(Def_b_4);
         Def_b_4.setBounds(710, 30, 100, 100);
 
         Med_b_1.setForeground(new java.awt.Color(255, 255, 255));
-        Med_b_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Mediocampos/6.png"))); // NOI18N
+        Med_b_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Mediocampos/6persona.png"))); // NOI18N
         Med_b_1.setText("jLabel1");
         getContentPane().add(Med_b_1);
         Med_b_1.setBounds(610, 110, 100, 100);
 
         Med_b_2.setForeground(new java.awt.Color(255, 255, 255));
-        Med_b_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Mediocampos/15.png"))); // NOI18N
+        Med_b_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Mediocampos/15persona.png"))); // NOI18N
         Med_b_2.setText("jLabel1");
         getContentPane().add(Med_b_2);
         Med_b_2.setBounds(610, 510, 100, 100);
 
         Med_b_3.setForeground(new java.awt.Color(255, 255, 255));
-        Med_b_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Mediocampos/14.png"))); // NOI18N
+        Med_b_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Mediocampos/14persona.png"))); // NOI18N
         Med_b_3.setText("jLabel1");
         getContentPane().add(Med_b_3);
         Med_b_3.setBounds(640, 310, 100, 100);
 
         Atc_b_1.setForeground(new java.awt.Color(255, 255, 255));
-        Atc_b_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Atacantes/17.png"))); // NOI18N
+        Atc_b_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Atacantes/17persona.png"))); // NOI18N
         Atc_b_1.setText("jLabel1");
         getContentPane().add(Atc_b_1);
         Atc_b_1.setBounds(490, 310, 100, 100);
 
         Atc_b_2.setForeground(new java.awt.Color(255, 255, 255));
-        Atc_b_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Atacantes/9.png"))); // NOI18N
+        Atc_b_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Atacantes/9persona.png"))); // NOI18N
         Atc_b_2.setText("jLabel1");
         getContentPane().add(Atc_b_2);
         Atc_b_2.setBounds(490, 80, 100, 100);
 
         Atc_b_3.setForeground(new java.awt.Color(255, 255, 255));
-        Atc_b_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Atacantes/7.png"))); // NOI18N
+        Atc_b_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerfrancia/Visual/Barcelona/Atacantes/7persona.png"))); // NOI18N
         Atc_b_3.setText("jLabel1");
         getContentPane().add(Atc_b_3);
         Atc_b_3.setBounds(490, 540, 100, 100);
@@ -269,11 +269,11 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Formacion_a);
-        Formacion_a.setBounds(980, 450, 120, 24);
+        Formacion_a.setBounds(980, 450, 120, 20);
 
         Formacion_b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"4-3-3", "4-4-2", "4-5-1"}));
         getContentPane().add(Formacion_b);
-        Formacion_b.setBounds(1220, 450, 120, 24);
+        Formacion_b.setBounds(1220, 450, 120, 20);
 
         Equipo_a.setBackground(new java.awt.Color(204, 204, 204));
         Equipo_a.setForeground(new java.awt.Color(102, 102, 102));

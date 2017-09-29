@@ -87,7 +87,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Defensas/3.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Defensas/3persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
@@ -106,7 +106,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Defensas/4.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Defensas/4persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -125,7 +125,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Defensas/5.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Defensas/5persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -144,7 +144,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Defensas/2.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Defensas/2persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -163,7 +163,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Mediocampos/10.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Mediocampos/10persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -182,7 +182,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Mediocampos/8.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Mediocampos/8persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -201,7 +201,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Mediocampos/16.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Mediocampos/16persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -220,7 +220,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Atacantes/20.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Atacantes/20persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -239,7 +239,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Atacantes/11.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Atacantes/11persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -258,7 +258,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Atacantes/7.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Atacantes/7persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -274,7 +274,7 @@
     <Component class="javax.swing.JLabel" name="Portero_a">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Real Madrid/Porteros/1.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Juventus/Porteros/1persona.png"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -326,7 +326,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Porteros/13.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Porteros/13persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -345,7 +345,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Defensas/4.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Defensas/4persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
@@ -364,7 +364,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Defensas/5.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Defensas/5persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -383,7 +383,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Defensas/2.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Defensas/2persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -402,7 +402,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Defensas/12.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Defensas/12persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -421,7 +421,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Mediocampos/6.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Mediocampos/6persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -440,7 +440,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Mediocampos/15.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Mediocampos/15persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -459,7 +459,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Mediocampos/14.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Mediocampos/14persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -478,7 +478,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Atacantes/17.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Atacantes/17persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -497,7 +497,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Atacantes/9.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Atacantes/9persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -516,7 +516,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Atacantes/7.png"/>
+          <Image iconType="3" name="/soccerfrancia/Visual/Barcelona/Atacantes/7persona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
