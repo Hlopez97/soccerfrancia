@@ -1083,7 +1083,7 @@ class equipo
         // si el jugador es aleatorio
         if (id == 99)
         {
-            int randomNum = ThreadLocalRandom.current().nextInt(0,11);
+            int randomNum = ThreadLocalRandom.current().nextInt(0,JugadoresActivos.size());
             p = JugadoresActivos.get(randomNum).id;
         }
         // sino
@@ -1098,7 +1098,7 @@ class equipo
         
         while (JugadoresActivos.get(index).HasBall)
         {
-            int randomNum = ThreadLocalRandom.current().nextInt(0,11);
+            int randomNum = ThreadLocalRandom.current().nextInt(0,JugadoresActivos.size());
             p = JugadoresActivos.get(randomNum).id;
             index = IndexDeJugador(p);
         }
